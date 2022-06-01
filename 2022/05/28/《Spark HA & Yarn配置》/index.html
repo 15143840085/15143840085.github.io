@@ -39,11 +39,11 @@
 <meta property="og:title" content="《Spark HA &amp; Yarn配置》">
 <meta property="og:url" content="http://example.com/2022/05/28/%E3%80%8ASpark%20HA%20&%20Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/index.html">
 <meta property="og:site_name" content="liusongtao����ҳ">
-<meta property="og:description" content="七、spark standalone HA环境搭建（需要更新zookeeper版本，略）前提: 确保Zookeeper 和 HDFS 均已经启动 先在spark-env.sh中, 删除: SPARK_MASTER_HOST&#x3D;node1  原因: 配置文件中固定master是谁, 那么就无法用到zk的动态切换master功能了. 在spark-env.sh中, 增加: SPARK_DAEMON_JA">
+<meta property="og:description" content="七、spark standalone HA环境搭建（需要更新zookeeper版本，略）前提: 确保Zookeeper 和 HDFS 均已经启动 先在spark-env.sh中, 删除: SPARK_MASTER_HOST&#x3D;node1  原因: 配置文件中固定master是谁, 那么就无法用到zk的动态切换master功能了. 在spark-env.sh中, 增加: 1234567SPARK_DA">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-05-28T10:30:00.000Z">
-<meta property="article:modified_time" content="2022-05-30T12:34:37.887Z">
+<meta property="article:modified_time" content="2022-06-01T08:48:37.849Z">
 <meta property="article:author" content="liusongtao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1750,7 +1750,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1653914097238),
+    lastupdate: new Date(1654073976754),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2613,33 +2613,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="七、spark-standalone-HA环境搭建（需要更新zookeeper版本，略）"><a href="#七、spark-standalone-HA环境搭建（需要更新zookeeper版本，略）" class="headerlink" title="七、spark standalone HA环境搭建（需要更新zookeeper版本，略）"></a>七、spark standalone HA环境搭建<strong>（需要更新<strong><strong>zookeeper</strong></strong>版本，略）</strong></h1><p>前提: 确保Zookeeper 和 HDFS 均已经启动</p>
-<p>先在<code>spark-env.sh</code>中, 删除: <code>SPARK_MASTER_HOST=node1</code></p>
+    <h1 id="七、spark-standalone-HA环境搭建（需要更新zookeeper版本，略）"><a href="#七、spark-standalone-HA环境搭建（需要更新zookeeper版本，略）" class="headerlink" title="七、spark standalone HA环境搭建（需要更新zookeeper版本，略）"></a>七、spark standalone HA环境搭建（需要更新zookeeper版本，略）</h1><p>前提: 确保Zookeeper 和 HDFS 均已经启动</p>
+<p>先在<code>spark-env.sh</code>中, <strong>删除</strong>: <code>SPARK_MASTER_HOST=node1</code></p>
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image034.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image034.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>原因: 配置文件中固定master是谁, 那么就无法用到zk的动态切换master功能了.</p>
 <p>在<code>spark-env.sh</code>中, 增加:</p>
-<p>SPARK_DAEMON_JAVA_OPTS&#x3D;”-Dspark.deploy.recoveryMode&#x3D;ZOOKEEPER -Dspark.deploy.zookeeper.url&#x3D;node1:2181,node2:2181,node3:2181 -Dspark.deploy.zookeeper.dir&#x3D;&#x2F;spark-ha”</p>
-<p># spark.deploy.recoveryMode 指定HA模式 基于Zookeeper实现</p>
-<p># 指定Zookeeper的连接地址</p>
-<p># 指定在Zookeeper中注册临时节点的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SPARK_DAEMON_JAVA_OPTS=&quot;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=node1:2181,node2:2181,node3:2181 -Dspark.deploy.zookeeper.dir=/spark-ha&quot;</span><br><span class="line"></span><br><span class="line">\# spark.deploy.recoveryMode 指定HA模式 基于Zookeeper实现</span><br><span class="line"></span><br><span class="line">\# 指定Zookeeper的连接地址</span><br><span class="line"></span><br><span class="line">\# 指定在Zookeeper中注册临时节点的路径</span><br></pre></td></tr></table></figure>
+
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image036.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image036.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>将spark-env.sh 分发到每一台服务器上</p>
-<p>scp spark-env.sh node2:&#x2F;export&#x2F;server&#x2F;spark&#x2F;conf&#x2F;</p>
-<p>scp spark-env.sh node3:&#x2F;export&#x2F;server&#x2F;spark&#x2F;conf&#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp spark-env.sh node2:/export/server/spark/conf/</span><br><span class="line"></span><br><span class="line">scp spark-env.sh node3:/export/server/spark/conf/</span><br></pre></td></tr></table></figure>
+
 <p>停止当前StandAlone集群</p>
-<p>sbin&#x2F;stop-all.sh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/stop-all.sh</span><br></pre></td></tr></table></figure>
+
 <p>启动集群:</p>
 <p># 在node1上 启动一个master 和全部worker</p>
-<p>sbin&#x2F;start-all.sh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/start-all.sh</span><br></pre></td></tr></table></figure>
+
 <p># 注意, 下面命令在node2上执行</p>
-<p>sbin&#x2F;start-master.sh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/start-master.sh</span><br></pre></td></tr></table></figure>
+
 <p># 在node2上启动一个备用的master进程</p>
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image038.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image038.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image040.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image040.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>status：standby node2备用master状态是standby</p>
 <p>master主备切换</p>
 <p>提交一个spark任务到当前<code>alive</code>master上:</p>
-<p>bin&#x2F;spark-submit –master spark:&#x2F;&#x2F;node1:7077 &#x2F;export&#x2F;server&#x2F;spark&#x2F;examples&#x2F;src&#x2F;main&#x2F;python&#x2F;pi.py 1000</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/spark-submit --master spark://node1:7077 /export/server/spark/examples/src/main/python/pi.py 1000</span><br></pre></td></tr></table></figure>
+
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image042.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image042.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>在提交成功后, 将alivemaster直接kill掉</p>
 <p>不会影响程序运行:</p>
@@ -2647,22 +2649,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>最大的影响是 会让它中断大约30秒左右.</p>
 <h1 id="八、Spark-On-YARN-环境搭建"><a href="#八、Spark-On-YARN-环境搭建" class="headerlink" title="八、Spark On YARN 环境搭建"></a>八、Spark On YARN 环境搭建</h1><p>前提：在spark-env.sh  以及 环境变量配置文件- HADOOP_CONF_DIR</p>
 <p>- YARN_CONF_DIR</p>
-<div class="story post-story"><h2 id="1-启动yarn集群历史服务器"><a href="#1-启动yarn集群历史服务器" class="headerlink" title="1.启动yarn集群历史服务器"></a>1.启动yarn集群历史服务器</h2><p>cd &#x2F;export&#x2F;server&#x2F;hadoop&#x2F;sbin&#x2F;</p>
-<p>.&#x2F;mr-jobhistory-daemon.sh start historyserver</p>
+<div class="story post-story"><h2 id="1-启动yarn集群历史服务器"><a href="#1-启动yarn集群历史服务器" class="headerlink" title="1.启动yarn集群历史服务器"></a>1.启动yarn集群历史服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /export/server/hadoop/sbin/</span><br><span class="line"></span><br><span class="line">./mr-jobhistory-daemon.sh start historyserver</span><br></pre></td></tr></table></figure>
+
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image044.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image044.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="2-在yarn上启动pyspark"><a href="#2-在yarn上启动pyspark" class="headerlink" title="2.在yarn上启动pyspark"></a>2.在yarn上启动pyspark</h2><p>cd &#x2F;export&#x2F;server&#x2F;hadoop&#x2F;etc&#x2F;hadoop</p>
-<p>&#x2F;export&#x2F;server&#x2F;spark&#x2F;bin&#x2F;pyspark –master yarn</p>
+</div><div class="story post-story"><h2 id="2-在yarn上启动pyspark"><a href="#2-在yarn上启动pyspark" class="headerlink" title="2.在yarn上启动pyspark"></a>2.在yarn上启动pyspark</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /export/server/hadoop/etc/hadoop</span><br><span class="line"></span><br><span class="line">/export/server/spark/bin/pyspark --master yarn</span><br></pre></td></tr></table></figure>
+
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image046.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image046.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>执行测试命令 sc.parallelize([1,2,3,4,5]).map(lambda x: x*10).collect()</p>
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image048.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image048.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>&#x2F;export&#x2F;server&#x2F;spark目录下执行</p>
-<p>bin&#x2F;spark-submit –master yarn &#x2F;export&#x2F;server&#x2F;spark&#x2F;examples&#x2F;src&#x2F;main&#x2F;python&#x2F;pi.py 10</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/spark-submit --master yarn /export/server/spark/examples/src/main/python/pi.py 10</span><br></pre></td></tr></table></figure>
+
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image050.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image050.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image052.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image052.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="3-验证client模式"><a href="#3-验证client模式" class="headerlink" title="3.验证client模式"></a>3.验证client模式</h2><p>&#x2F;export&#x2F;server&#x2F;spark&#x2F;bin&#x2F;spark-submit –master yarn –deploy-mode client –driver-memory 512m –executor-memory 512m –num-executors 3 –total-executor-cores 3 &#x2F;export&#x2F;server&#x2F;spark&#x2F;examples&#x2F;src&#x2F;main&#x2F;python&#x2F;pi.py 3</p>
+</div><div class="story post-story"><h2 id="3-验证client模式"><a href="#3-验证client模式" class="headerlink" title="3.验证client模式"></a>3.验证client模式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/export/server/spark/bin/spark-submit --master yarn --deploy-mode client --driver-memory 512m --executor-memory 512m --num-executors 3 --total-executor-cores 3 /export/server/spark/examples/src/main/python/pi.py 3</span><br></pre></td></tr></table></figure>
+
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image054.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image054.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image056.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image056.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="4-验证cluster模式"><a href="#4-验证cluster模式" class="headerlink" title="4.验证cluster模式"></a>4.验证cluster模式</h2><p>&#x2F;export&#x2F;server&#x2F;spark&#x2F;bin&#x2F;spark-submit –master yarn –deploy-mode cluster –driver-memory 512m –executor-memory 512m –num-executors 3 –total-executor-cores 3 &#x2F;export&#x2F;server&#x2F;spark&#x2F;examples&#x2F;src&#x2F;main&#x2F;python&#x2F;pi.py 3</p>
+</div><div class="story post-story"><h2 id="4-验证cluster模式"><a href="#4-验证cluster模式" class="headerlink" title="4.验证cluster模式"></a>4.验证cluster模式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/export/server/spark/bin/spark-submit --master yarn --deploy-mode cluster --driver-memory 512m --executor-memory 512m --num-executors 3 --total-executor-cores 3 /export/server/spark/examples/src/main/python/pi.py 3</span><br></pre></td></tr></table></figure>
+
 <p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image058.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image058.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>至此基础环境-&gt;JDK-&gt;Hadoop-&gt;Zookeeper-&gt;Spark(local)-&gt;Spark(stand-alone) -&gt;Spark(HA)-&gt;Spark(Yarn)已全部配置完成。</p>
 
@@ -2701,10 +2706,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-30T20:34:37+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-01T16:48:37+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年5月30日</p>
+    <p>更新于：2022年6月1日</p>
   </a>
 </div>
 
@@ -3849,7 +3854,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-HA/","name":"Spark HA"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-HA/Spark-On-Yarn/","name":"Spark On Yarn"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/28/《Spark HA & Yarn配置》/","name":"《Spark HA & Yarn配置》"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"《Spark HA & Yarn配置》","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/28/%E3%80%8ASpark%20HA%20&%20Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/28/%E3%80%8ASpark%20HA%20&%20Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/","wordCount":0,"datePublished":"2022-05-28T10:30:00.000Z","dateModified":"2022-05-30T12:34:37.887Z","articleSection":"Spark HA","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-HA/","name":"Spark HA"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-HA/Spark-On-Yarn/","name":"Spark On Yarn"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/28/《Spark HA & Yarn配置》/","name":"《Spark HA & Yarn配置》"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"《Spark HA & Yarn配置》","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/28/%E3%80%8ASpark%20HA%20&%20Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/28/%E3%80%8ASpark%20HA%20&%20Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/","wordCount":0,"datePublished":"2022-05-28T10:30:00.000Z","dateModified":"2022-06-01T08:48:37.849Z","articleSection":"Spark HA","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/05/28/《spark local& stand-alone配置》/"/>
+  <link rel="canonical" href="http://example.com/2022/06/22/《kafka环境配置》/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>《Spark local& stand-alone配置》 - liusongtao����ҳ</title>
+  <title>《Kafka环境配置》 - liusongtao����ҳ</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="��ӭ����liusongtao����ҳ - liusongtao - liusongtao����ҳ">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Spark local&amp; stand-alone配置》">
-<meta property="og:url" content="http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/index.html">
+<meta property="og:title" content="《Kafka环境配置》">
+<meta property="og:url" content="http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/index.html">
 <meta property="og:site_name" content="liusongtao����ҳ">
-<meta property="og:description" content="五、安装、配置spark-local1. Anaconda On Linux 安装 (单台服务器)上传安装包: Anaconda3-2021.05-Linux-x86_64.sh(路径：&#x2F;export&#x2F;server&#x2F;) 安装: 1sh .&#x2F;Anaconda3-2021.05-Linux-x86_64.sh  &gt;&gt;&gt;   直接回车 –More– 按空格">
+<meta property="og:description" content="一、环境准备 将下载的3个软件（jdk，zk，kafka）放在&#x2F;root&#x2F;sf目录(这里目录根据自己的情况随意) 解压配置jdk环境变量tar zxvf jdk-8u221-linux-x64.tar.gz解压后目录：&#x2F;root&#x2F;sf&#x2F;jdk1.8.0_221环境变量配置： vim &#x2F;etc&#x2F;profile在最下面加入如下配置：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-05-28T09:30:00.000Z">
-<meta property="article:modified_time" content="2022-06-01T08:44:36.581Z">
+<meta property="article:published_time" content="2022-06-22T05:42:30.000Z">
+<meta property="article:modified_time" content="2022-06-22T05:43:35.476Z">
 <meta property="article:author" content="liusongtao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1750,7 +1750,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654083952071),
+    lastupdate: new Date(1655877611263),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2521,7 +2521,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="liusongtao����ҳ">
   </span>
@@ -2542,7 +2542,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        《Spark local& stand-alone配置》
+        《Kafka环境配置》
       </h1>
       <div class='new-meta-box'>
         
@@ -2559,40 +2559,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/Spark-local/">Spark-local</a><span class="sep"></span><a class="category-link" href="/categories/Spark-local/Anaconda/">Anaconda</a><span class="sep"></span><a class="category-link" href="/categories/Spark-local/Anaconda/pyspark/">pyspark</a><span class="sep"></span><a class="category-link" href="/categories/Spark-local/Anaconda/pyspark/Master/">Master</a><span class="sep"></span><a class="category-link" href="/categories/Spark-local/Anaconda/pyspark/Master/Worker/">Worker</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Spark-local/" itemprop="url"><span itemprop="name">Spark-local</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Spark-local/Anaconda/" itemprop="url"><span itemprop="name">Anaconda</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Spark-local/Anaconda/pyspark/" itemprop="url"><span itemprop="name">pyspark</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Spark-local/Anaconda/pyspark/Master/" itemprop="url"><span itemprop="name">Master</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Spark-local/Anaconda/pyspark/Master/Worker/" itemprop="url"><span itemprop="name">Worker</span></a>
-      </span>
-    
-  </div>
-
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-28T17:30:00+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-22T13:42:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年5月28日</p>
+    <p>发布于：2022年6月22日</p>
   </a>
 </div>
 
@@ -2625,206 +2599,49 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="五、安装、配置spark-local"><a href="#五、安装、配置spark-local" class="headerlink" title="五、安装、配置spark-local"></a>五、安装、配置spark-local</h1><div class="story post-story"><h2 id="1-Anaconda-On-Linux-安装-单台服务器"><a href="#1-Anaconda-On-Linux-安装-单台服务器" class="headerlink" title="1. Anaconda On Linux 安装 (单台服务器)"></a>1. Anaconda On Linux 安装 (单台服务器)</h2><p>上传安装包: Anaconda3-2021.05-Linux-x86_64.sh(路径：&#x2F;export&#x2F;server&#x2F;)</p>
-<p>安装:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh ./Anaconda3-2021.05-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
-
-<p>&gt;&gt;&gt;   直接回车</p>
-<p>–More– 按空格</p>
-<p>Do you accept the license terms?[yes|no]</p>
-<p>[No] &gt;&gt;&gt;  yes</p>
-<p>[&#x2F;root&#x2F;anaconda3] &gt;&gt;&gt;  &#x2F;export&#x2F;server&#x2F;anaconda3</p>
-<p>(这里是问你Anaconda3装在哪里，推荐在&#x2F;export&#x2F;server&#x2F;anaconda3)</p>
-<p>by running conda init? [yes|no]</p>
-<p>[no] &gt;&gt;&gt;  yes (询问是否要初始化，输入yes)</p>
-<h3 id="安装完成后-退出finalshell-重新进来"><a href="#安装完成后-退出finalshell-重新进来" class="headerlink" title="安装完成后, 退出finalshell 重新进来:"></a>安装完成后, <code>退出finalshell 重新进来</code>:</h3><p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image002.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image002.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>看到这个Base开头表明安装好了.</p>
-<p>base是默认的虚拟环境.</p>
-</div><div class="story post-story"><h2 id="2-Windows系统配置Anaconda"><a href="#2-Windows系统配置Anaconda" class="headerlink" title="2. Windows系统配置Anaconda"></a>2. Windows系统配置Anaconda</h2><p>安装:Anaconda3-2021.05-Windows-x86_64.exe文件,或者去官网下载: [<a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual#Downloads]">https://www.anaconda.com/products/individual#Downloads]</a></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image004.png" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image004.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image006.png" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image006.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image008.png" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image008.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img">不必勾选</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image010.png" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image010.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img">Finish完成安装</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image012.png" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>打开开始菜单, 搜索Anaconda</p>
-<p>出现如图的程序, 安装成功.</p>
-<h3 id="打开Anaconda-Prompt-出现bash-安装成功"><a href="#打开Anaconda-Prompt-出现bash-安装成功" class="headerlink" title="打开Anaconda Prompt 出现bash 安装成功"></a>打开Anaconda Prompt 出现bash 安装成功</h3><p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image014.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image014.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="1-配置国内源"><a href="#1-配置国内源" class="headerlink" title="1.   配置国内源"></a>1.   配置国内源</h2><p>Anaconda默认源服务器在国外, 网速比较慢, 配置国内源加速网络下载.</p>
-<p>打开上图中的 <code>Anaconda Prompt</code>程序:</p>
-<p>执行:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure>
-
-
-
-<p>然后用记事本打开:</p>
-<p><code>C:\Users\用户名\.condarc</code>文件, 将如下内容替换进文件内,保存即可:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">channels:</span><br><span class="line"></span><br><span class="line"> \- defaults</span><br><span class="line"></span><br><span class="line">show_channel_urls: true</span><br><span class="line"></span><br><span class="line">default_channels:</span><br><span class="line"></span><br><span class="line"> \- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line"></span><br><span class="line"> \- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line"></span><br><span class="line"> \- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line"></span><br><span class="line">custom_channels:</span><br><span class="line"></span><br><span class="line"> conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line"></span><br><span class="line"> msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line"></span><br><span class="line"> bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line"></span><br><span class="line"> menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line"></span><br><span class="line"> pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line"></span><br><span class="line"> simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="1-建虚拟环境"><a href="#1-建虚拟环境" class="headerlink" title="1. 建虚拟环境"></a>1. 建虚拟环境</h2><p># 创建虚拟环境 pyspark, 基于Python 3.8</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pyspark python=3.8</span><br></pre></td></tr></table></figure>
-
-<p># 切换到虚拟环境内</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate pyspark</span><br></pre></td></tr></table></figure>
-
-<p># 在虚拟环境内安装包</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyhive pyspark jieba -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image016.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image016.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="2-上传、解压spark安装包"><a href="#2-上传、解压spark安装包" class="headerlink" title="2.   上传、解压spark安装包"></a>2.   上传、解压spark安装包</h2><p>路径：&#x2F;export&#x2F;server&#x2F;</p>
-<p>上传成功后，解压安装包</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf spark-3.2.0-bin-hadoop3.2.tgz -C /export/server/</span><br></pre></td></tr></table></figure>
-
-<p>建立软连接</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /export/server/spark-3.2.0-bin-hadoop3.2 /export/server/spark</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li></div><div class="story post-story"><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
+    <p>一、环境准备</p>
+<p>将下载的3个软件（jdk，zk，kafka）放在&#x2F;root&#x2F;sf目录(这里目录根据自己的情况随意)</p>
+<p>解压配置jdk环境变量<br>tar zxvf jdk-8u221-linux-x64.tar.gz<br>解压后目录：<br>&#x2F;root&#x2F;sf&#x2F;jdk1.8.0_221<br>环境变量配置：</p>
+<p>vim &#x2F;etc&#x2F;profile<br>在最下面加入如下配置：</p>
+<p>保存退出</p>
+<p>执行如下命令使得配置生效</p>
+<p>source &#x2F;etc&#x2F;profile<br>二、解压及配置zookeeper</p>
+<p>tar zxvf apache-zookeeper-3.6.2-bin.tar.gz -C .&#x2F;zk&#x2F;<br> &#x2F;&#x2F; 解压到当前目录下的zk目录中<br>进入zk：</p>
+<p>将文件夹重命名为2181（每一个zk 服务都以自己的端口号命名）</p>
+<p>mv apache-zookeeper-3.6.2-bin 2181<br>再复制2个zk分别为2182，2183</p>
+<p>cp -R 2181 2182<br>cp -R 2181 2183<br>新建3个zk的数据保存目录：</p>
+<p>&#x2F;root&#x2F;sf&#x2F;datas&#x2F;zk&#x2F;2181<br>&#x2F;root&#x2F;sf&#x2F;datas&#x2F;zk&#x2F;2182<br>&#x2F;root&#x2F;sf&#x2F;datas&#x2F;zk&#x2F;2183<br>&#x2F;&#x2F; 分别在没个文件夹建文件myid 内容分别为1，2，3<br>接着分别进入zk服务的conf目录</p>
+<p>&#x2F;&#x2F; 复制一个配置文件<br>cp zoo_sample.cfg zoo.cfg<br>修改zoo.cfg配置（这里以2181为例，前提的zk执行修改dataDir及端口）</p>
+<p>这里的server.x：x就是对应myid中的内容（1，2，3）。</p>
+<p>2182，2183分别按照上面修改完成（修改dataDir和端口）</p>
+<p>到此zookeeper就配置完成，每次都进入不同的目录启动zk非常麻烦，这里写一个shell脚本来一次启动所有服务：</p>
+<p>在zk目录下新建shell脚本：</p>
+<p>touch zkServer.sh<br>&#x2F;&#x2F; 编辑该文件内容<br>vim zkServer.sh<br>&#x2F;&#x2F; 内容如下：<br>#!&#x2F;bin&#x2F;bash<br>age&#x3D;”使用: $0 (start|stop|status)”<br>if [ $# &#x3D;&#x3D; 0 ];then<br>    echo $age<br>    exit 1<br>fi<br>behave&#x3D;$1<br>echo “$behave zkServer cluster”<br>#主机名称<br>for i in 1 2 3<br>do<br>    &#x2F;root&#x2F;sf&#x2F;zk&#x2F;218$i&#x2F;bin&#x2F;zkServer.sh $behave<br>done<br>exit<br>保存退出后执行如下命令，可执行的权限</p>
+<p>chmod +x zkServer.sh<br>到此shell脚本完成，接下来测试：</p>
+<p>启动：</p>
+<p>.&#x2F;zkServer.sh start</p>
+<p>执行jps查看刚启动的zk</p>
+<p>到此zk就全部完成了，接下来kafka的配置</p>
+<p>三、解压配置kafka</p>
+<p>tar zxvf kafka_2.13-2.7.0.tgz -C .&#x2F;kafka&#x2F;<br>&#x2F;&#x2F; 解压kafka到当前目录的kafka目录下<br>进入kafka目录：</p>
+<p>将文件夹重命名为9092（每一个kafka 服务都以自己的端口号命名）</p>
+<p>mv kafka_2.13-2.7.0 9092<br>再复制2个kafka分别为9093，9094</p>
+<p>cp -R 9092 9093<br>cp -R 9092 9094<br>新建3个kafka的数据保存目录：</p>
+<p>&#x2F;root&#x2F;sf&#x2F;datas&#x2F;kafka&#x2F;9092<br>&#x2F;root&#x2F;sf&#x2F;datas&#x2F;kafka&#x2F;9093<br>&#x2F;root&#x2F;sf&#x2F;datas&#x2F;kafka&#x2F;9094<br>接着分别进入kafka服务的config目录修改server.properties文件</p>
+<p>要修改的地方上图已经标注出来了</p>
+<p>1、broker.id&#x3D;0 &#x2F;&#x2F; 这里的数字要唯一</p>
+<p>2、listeners&#x3D;PLAINTEXT:&#x2F;&#x2F;:9092 &#x2F;&#x2F; 这里是kafka的端口</p>
+<p>3、log.dirs&#x3D;&#x2F;root&#x2F;sf&#x2F;datas&#x2F;kafka&#x2F;9092 &#x2F;&#x2F; 数据目录</p>
+<p>4、zookeeper.connect&#x3D;localhost:2181,localhost:2182,localhost:2183 &#x2F;&#x2F; zk集群的地址:端口</p>
+<p>其它2个kafka分别按照上面的方式修改即可。</p>
+<p>到此kafka的配置就完成了。</p>
+<p>一样3个kafka分别启动太麻烦，这里也通过shell脚本来启动kafka集群</p>
+<p>新建kfServer.sh脚本文件：</p>
+<p>touch kfServer.sh<br>vim kfServer.sh<br>#!&#x2F;bin&#x2F;bash<br>age&#x3D;”使用: $0 (start|stop)”<br>if [ $# &#x3D;&#x3D; 0 ];then<br>    echo $age<br>    exit 1<br>fi<br>echo “$1 kafkaServer cluster”<br>#主机名称<br>for i in 2 3 4<br>do<br>    if [ “$1” &#x3D;&#x3D; “start” ];then<br>        &#x2F;root&#x2F;sf&#x2F;kafka&#x2F;909$i&#x2F;bin&#x2F;kafka-server-$1.sh -daemon &#x2F;root&#x2F;sf&#x2F;kafka&#x2F;909$i&#x2F;config&#x2F;server.properties<br>    fi<br>    if [ “$1” &#x3D;&#x3D; “stop” ];then<br>        &#x2F;root&#x2F;sf&#x2F;kafka&#x2F;909$i&#x2F;bin&#x2F;kafka-server-$1.sh stop<br>    fi<br>done<br>exit<br>到此kafka的所有配置完成了，接下来测试，启动kafka通过上面的脚本</p>
+<p>启动kafka前的先启动zookeeper服务</p>
+<p>kafka启动完成！！！</p>
 
 
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">JAVA_HOME</span></span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/export/server/jdk1.8.0_241 </span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin </span><br><span class="line"></span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">HADOOP_HOME</span></span><br><span class="line"></span><br><span class="line">export HADOOP_HOME=/export/server/hadoop-3.3.0 </span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ZOOKEEPER_HOME</span></span><br><span class="line"></span><br><span class="line">export ZOOKEEPER_HOME=/export/server/zookeeper</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$ZOOKEEPER_HOME/bin</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">SPARK_HOME</span></span><br><span class="line"></span><br><span class="line">export SPARK_HOME=/export/server/spark</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">HADOOP_CONF_DIR</span></span><br><span class="line"></span><br><span class="line">export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">PYSPARK_PYTHON</span></span><br><span class="line"></span><br><span class="line">export PYSPARK_PYTHON=/export/server/anaconda3/envs/pyspark/bin/python</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">KAFKA_HOME</span></span><br><span class="line"></span><br><span class="line">export KAFKA_HOME=/export/server/kafka</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$KAFKA_HOME/bin</span><br></pre></td></tr></table></figure>
-
-<h3 id="PYSPARK-PYTHON和-JAVA-HOME-需要同样配置在-root-bashrc中"><a href="#PYSPARK-PYTHON和-JAVA-HOME-需要同样配置在-root-bashrc中" class="headerlink" title="PYSPARK_PYTHON和 JAVA_HOME 需要同样配置在: /root/.bashrc中"></a>PYSPARK_PYTHON和 JAVA_HOME 需要同样配置在: <code>/root/.bashrc</code>中</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /root/.bashrc</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">JAVA_HOME</span></span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/export/server/jdk1.8.0_241 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">PYSPARK_PYTHON</span></span><br><span class="line"></span><br><span class="line">export PYSPARK_PYTHON=/export/server/anaconda3/envs/pyspark/bin/python</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image018.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image018.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4.   测试"></a>4.   测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /export/server/anaconda3/envs/pyspark/bin/</span><br><span class="line"></span><br><span class="line">./pyspark</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image020.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image020.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>测试命令sc.parallelize([1,2,3,4,5]).map(lambda x: x *10).collect()</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image022.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image022.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="5-查看spark：4040端口（192-168-88-151-4040）"><a href="#5-查看spark：4040端口（192-168-88-151-4040）" class="headerlink" title="5.   查看spark：4040端口（192.168.88.151:4040）"></a>5.   查看spark：4040端口（192.168.88.151:4040）</h2><p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image024.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image024.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image026.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image026.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>打开监控页面后, 可以发现 在程序内仅有一个Driver</p>
-<p>因为我们是Local模式, Driver即管理 又 干活.</p>
-<p>同时, 输入jps</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image028.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image028.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>可以看到local模式下的唯一进程存在</p>
-<p>SparkSubmit</p>
-<p>这个进程 即是master也是worker</p>
-<h1 id="六、安装、配置Spark-StandAlone"><a href="#六、安装、配置Spark-StandAlone" class="headerlink" title="六、安装、配置Spark StandAlone"></a>六、安装、配置Spark StandAlone</h1></div><div class="story post-story"><h2 id="1-历史服务器"><a href="#1-历史服务器" class="headerlink" title="1.历史服务器"></a>1.历史服务器</h2><p>历史服务器不是Spark环境的必要组件, 是可选的.</p>
-<p>回忆: 在YARN中 有一个历史服务器, </p>
-<p>功能: 将YARN运行的程序的历史日志记录下来, 通过历史服务器方便用户查看程序运行的历史信息.</p>
-<p>Spark的历史服务器, </p>
-<p>功能: 将Spark运行的程序的历史日志记录下来, 通过历史服务器方便用户查看程序运行的历史信息.</p>
-<p>搭建集群环境, 我们一般推荐将历史服务器也配置上, 方面以后查看历史记录</p>
-</div><div class="story post-story"><h2 id="2-集群规划"><a href="#2-集群规划" class="headerlink" title="2.集群规划"></a>2.集群规划</h2><p>node1\ node2\ node3 </p>
-<p>node1运行: Spark的Master进程 和 1个Worker进程</p>
-<p>node2运行: spark的1个worker进程</p>
-<p>node3运行: spark的1个worker进程</p>
-<p>整个集群提供: 1个master进程 和 3个worker进程</p>
-</div><div class="story post-story"><h2 id="3-安装"><a href="#3-安装" class="headerlink" title="3.安装"></a>3.安装</h2><h3 id="（1）在所有机器安装Python-Anaconda"><a href="#（1）在所有机器安装Python-Anaconda" class="headerlink" title="（1）在所有机器安装Python(Anaconda)"></a>（1）在所有机器安装Python(Anaconda)</h3><p>将anconda3分发到node2、node3</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /export/server/</span><br><span class="line"></span><br><span class="line">scp -r /export/server/Anaconda3-2021.05-Linux-x86_64.sh/ node2:$PWD</span><br><span class="line"></span><br><span class="line">scp -r /export/server/Anaconda3-2021.05-Linux-x86_64.sh/ node3:$PWD</span><br></pre></td></tr></table></figure>
-
-<p>在node2、node3上安装anaconda3</p>
-<h3 id="步骤同上"><a href="#步骤同上" class="headerlink" title="步骤同上"></a>步骤同上</h3><p>node2、node3创建虚拟环境pyspark，基于Python3.8、进入虚拟环境，安装虚拟环境所需要的包pyspark jieba pyhive</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image030.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image030.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image032.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image032.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image034.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image034.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="4-node1上分发环境变量（-x2F-etc-x2F-profile、-x2F-root-x2F-bashrc）"><a href="#4-node1上分发环境变量（-x2F-etc-x2F-profile、-x2F-root-x2F-bashrc）" class="headerlink" title="4.node1上分发环境变量（&#x2F;etc&#x2F;profile、&#x2F;root&#x2F;bashrc）"></a>4.node1上分发环境变量（&#x2F;etc&#x2F;profile、&#x2F;root&#x2F;bashrc）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.bashrc root@node2:~/</span><br><span class="line"></span><br><span class="line">scp ~/.bashrc root@node3:~/</span><br><span class="line"></span><br><span class="line">scp /etc/profile/ root@node2:/etc/</span><br><span class="line"></span><br><span class="line">scp /etc/profile/ root@node3:/etc/</span><br></pre></td></tr></table></figure>
-
-<p>所有节点执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br><span class="line"></span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="5-配置workers文件-路径：-x2F-export-x2F-server-x2F-spark-x2F-conf"><a href="#5-配置workers文件-路径：-x2F-export-x2F-server-x2F-spark-x2F-conf" class="headerlink" title="5. 配置workers文件 路径：&#x2F;export&#x2F;server&#x2F;spark&#x2F;conf"></a>5. 配置workers文件 路径：&#x2F;export&#x2F;server&#x2F;spark&#x2F;conf</h2><p># 改名, 去掉后面的.template后缀</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv workers.template workers</span><br></pre></td></tr></table></figure>
-
-<p># 编辑worker文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim workers</span><br></pre></td></tr></table></figure>
-
-<p># 将里面的localhost删除, 追加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node1</span><br><span class="line"></span><br><span class="line">node2</span><br><span class="line"></span><br><span class="line">node3</span><br></pre></td></tr></table></figure>
-
-<p>到workers文件内</p>
-<p># 功能: 这个文件就是指示了 当前SparkStandAlone环境下, 有哪些worker</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image036.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image036.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="6-配置spark-env-sh文件"><a href="#6-配置spark-env-sh文件" class="headerlink" title="6. 配置spark-env.sh文件"></a>6. 配置spark-env.sh文件</h2><h2 id="1-改名"><a href="#1-改名" class="headerlink" title="1. 改名"></a>1. 改名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv spark-env.sh.template spark-env.sh</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="2-编辑spark-env-sh-在底部追加如下内容"><a href="#2-编辑spark-env-sh-在底部追加如下内容" class="headerlink" title="2. 编辑spark-env.sh, 在底部追加如下内容"></a>2. 编辑spark-env.sh, 在底部追加如下内容</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">## 设置JAVA安装目录</span><br><span class="line"></span><br><span class="line">JAVA_HOME=/export/server/jdk</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">## HADOOP软件配置文件目录，读取HDFS上文件和运行YARN集群</span><br><span class="line"></span><br><span class="line">HADOOP_CONF_DIR=/export/server/hadoop/etc/hadoop</span><br><span class="line"></span><br><span class="line">YARN_CONF_DIR=/export/server/hadoop/etc/hadoop</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">## 指定spark老大Master的IP和提交任务的通信端口</span><br><span class="line"></span><br><span class="line"># 告知Spark的master运行在哪个机器上</span><br><span class="line"></span><br><span class="line">export SPARK_MASTER_HOST=node1</span><br><span class="line"></span><br><span class="line"># 告知sparkmaster的通讯端口</span><br><span class="line"></span><br><span class="line">export SPARK_MASTER_PORT=7077</span><br><span class="line"></span><br><span class="line"># 告知spark master的 webui端口</span><br><span class="line"></span><br><span class="line">SPARK_MASTER_WEBUI_PORT=8080</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"># worker cpu可用核数</span><br><span class="line"></span><br><span class="line">SPARK_WORKER_CORES=1</span><br><span class="line"></span><br><span class="line"># worker可用内存</span><br><span class="line"></span><br><span class="line">SPARK_WORKER_MEMORY=1g</span><br><span class="line"></span><br><span class="line"># worker的工作通讯地址</span><br><span class="line"></span><br><span class="line">SPARK_WORKER_PORT=7078</span><br><span class="line"></span><br><span class="line"># worker的 webui地址</span><br><span class="line"></span><br><span class="line">SPARK_WORKER_WEBUI_PORT=8081</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">## 设置历史服务器</span><br><span class="line"></span><br><span class="line"># 配置的意思是 将spark程序运行的历史日志 存到hdfs的/sparklog文件夹中</span><br><span class="line"></span><br><span class="line">SPARK_HISTORY_OPTS=&quot;-Dspark.history.fs.logDirectory=hdfs://node1:8020/sparklog/ -Dspark.history.fs.cleaner.enabled=true&quot;</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="7-配置spark-defaults-conf文件"><a href="#7-配置spark-defaults-conf文件" class="headerlink" title="7. 配置spark-defaults.conf文件"></a>7. 配置spark-defaults.conf文件</h2><h3 id="1-改名-1"><a href="#1-改名-1" class="headerlink" title="1. 改名"></a>1. 改名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv spark-defaults.conf.template spark-defaults.conf</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-修改内容-追加如下内容"><a href="#2-修改内容-追加如下内容" class="headerlink" title="2. 修改内容, 追加如下内容"></a>2. 修改内容, 追加如下内容</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 开启spark的日期记录功能</span><br><span class="line"></span><br><span class="line">spark.eventLog.enabled     true</span><br><span class="line"></span><br><span class="line">\# 设置spark日志记录的路径</span><br><span class="line"></span><br><span class="line">spark.eventLog.dir  hdfs://node1:8020/sparklog/ </span><br><span class="line"></span><br><span class="line">\# 设置spark日志是否启动压缩</span><br><span class="line"></span><br><span class="line">spark.eventLog.compress   true</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image038.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image038.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="8-配置log4j-properties-文件-可选配置"><a href="#8-配置log4j-properties-文件-可选配置" class="headerlink" title="8. 配置log4j.properties 文件 [可选配置]"></a>8. 配置log4j.properties 文件 [可选配置]</h2><h3 id="1-改名-2"><a href="#1-改名-2" class="headerlink" title="1. 改名"></a>1. 改名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv log4j.properties.template log4j.properties</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-修改内容-参考下图"><a href="#2-修改内容-参考下图" class="headerlink" title="2. 修改内容 参考下图"></a>2. 修改内容 参考下图</h3><p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image040.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image040.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>INFO修改为WARN</p>
-<p>这个文件的修改不是必须的,  为什么修改为WARN. 因为Spark是个话痨</p>
-<p>会疯狂输出日志, 设置级别为WARN 只输出警告和错误日志, 不要输出一堆废话.</p>
-</div><div class="story post-story"><h2 id="9-将Spark安装文件夹-分发到其它的服务器上"><a href="#9-将Spark安装文件夹-分发到其它的服务器上" class="headerlink" title="9. 将Spark安装文件夹  分发到其它的服务器上"></a>9. 将Spark安装文件夹  分发到其它的服务器上</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -r spark-3.1.2-bin-hadoop3.2 node2:/export/server/</span><br><span class="line"></span><br><span class="line">scp -r spark-3.1.2-bin-hadoop3.2 node3:/export/server/</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image042.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image042.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image044.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image044.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>在node2和node3上 给spark安装目录增加软链接</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /export/server/spark-3.1.2-bin-hadoop3.2 /export/server/spark</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image046.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image046.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image048.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image048.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="10-启动历史服务器"><a href="#10-启动历史服务器" class="headerlink" title="10.启动历史服务器"></a>10.启动历史服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/export/server/spark/sbin/start-history-server.sh</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image050.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image050.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="11-启动Spark的Master和Worker进程"><a href="#11-启动Spark的Master和Worker进程" class="headerlink" title="11. 启动Spark的Master和Worker进程"></a>11. 启动Spark的Master和Worker进程</h2><p># 启动全部master和worker</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/start-all.sh</span><br></pre></td></tr></table></figure>
-
-<p># 或者可以一个个启动:</p>
-<p># 启动当前机器的master</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/start-master.sh</span><br></pre></td></tr></table></figure>
-
-<p># 启动当前机器的worker</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/start-worker.sh</span><br></pre></td></tr></table></figure>
-
-<p># 停止全部</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/stop-all.sh</span><br></pre></td></tr></table></figure>
-
-<p># 停止当前机器的master</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/stop-master.sh</span><br></pre></td></tr></table></figure>
-
-<p># 停止当前机器的worker</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/stop-worker.sh</span><br></pre></td></tr></table></figure>
-
-
-
-</div><div class="story post-story"><h2 id="12-连接到StandAlone集群"><a href="#12-连接到StandAlone集群" class="headerlink" title="12. 连接到StandAlone集群"></a>12. 连接到StandAlone集群</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/pyspark</span><br></pre></td></tr></table></figure>
-
-<p>执行:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/pyspark --master spark://node1:7077</span><br></pre></td></tr></table></figure>
-
-<p># 通过–master选项来连接到 StandAlone集群</p>
-<p># 如果不写–master选项, 默认是local模式运行</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image052.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image052.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><strong>bin&#x2F;spark-shell</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/spark-shell --master spark://node1:7077</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image054.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image054.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>&#x2F;&#x2F; 测试代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sc.parallelize(Array(1,2,3,4,5)).map(x=&gt; x + 1).collect()</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image056.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image056.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><strong>bin&#x2F;spark-submit (PI)</strong></p>
-<p>bin&#x2F;spark-submit –master spark:&#x2F;&#x2F;node1:7077 &#x2F;export&#x2F;server&#x2F;spark&#x2F;examples&#x2F;src&#x2F;main&#x2F;python&#x2F;pi.py 100</p>
-<p># 同样使用–master来指定将任务提交到集群运行</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image058.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image058.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>### 查看历史服务器WEB UI</p>
-<p>历史服务器的默认端口是: 18080</p>
-<p>我们启动在node1上, 可以在浏览器打开:</p>
-<p>node1:18080&#96;来进入到历史服务器的WEB UI上.</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image060.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image060.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>（此为没有关闭Hadoop安全模式，关闭即可）</p>
-
-</div>
   </div>
   
   
@@ -2842,7 +2659,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/>http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/</a></p>
+                <p>本文永久链接是：<a href=http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/>http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/</a></p>
               
             
           </blockquote>
@@ -2859,10 +2676,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-01T16:44:36+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-22T13:43:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年6月1日</p>
+    <p>更新于：2022年6月22日</p>
   </a>
 </div>
 
@@ -2881,7 +2698,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/&title=《Spark local& stand-alone配置》 - liusongtao����ҳ&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/&title=《Kafka环境配置》 - liusongtao����ҳ&summary="
           
           >
           
@@ -2893,7 +2710,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/&title=《Spark local& stand-alone配置》 - liusongtao����ҳ&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/&title=《Kafka环境配置》 - liusongtao����ҳ&summary="
           
           >
           
@@ -2905,7 +2722,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/&title=《Spark local& stand-alone配置》 - liusongtao����ҳ&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/&title=《Kafka环境配置》 - liusongtao����ҳ&summary="
           
           >
           
@@ -2938,25 +2755,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/05/28/%E3%80%8ASpark%20HA%20&%20Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>《Spark HA & Yarn配置》</p>
-          <p class='content'>七、spark standalone HA环境搭建（需要更新zookeeper版本，略）前提: 确保Zookeeper 和 HDFS 均已经启动
-先在spark-env.sh中, 删除: SPA...</p>
+        <a class='prev' href='/2022/06/22/%E3%80%8AKafka%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E3%80%8B/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>《Kafka命令行操作》</p>
+          <p class='content'>二：kafka的基本操作（命令行操作）1.查看当前服务器中的所有topic（在kafka目录下）
+kafka-topics.sh –zookeeper hadoop001:2181 –list2...</p>
         </a>
       
       
-        <a class='next' href='/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/'>
-          <p class='title'>《Spark基础环境配置》<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、基础环境1.主机名
-
-
-服务器
-运行角色
-
-
-
-node1.itcast.cn
-NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
+        <a class='next' href='/2022/05/28/%E3%80%8ASpark-HA-Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/'>
+          <p class='title'>《Spark HA & Yarn配置》<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>七、spark standalone HA环境搭建（需要更新zookeeper版本，略）前提: 确保Zookeeper 和 HDFS 均已经启动
+先在spark-env.sh中, 删除: SPA...</p>
         </a>
       
     </div>
@@ -2972,7 +2781,7 @@ NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2995,19 +2804,9 @@ NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
 
 
 
-  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Anaconda-On-Linux-%E5%AE%89%E8%A3%85-%E5%8D%95%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">1. Anaconda On Linux 安装 (单台服务器)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E-%E9%80%80%E5%87%BAfinalshell-%E9%87%8D%E6%96%B0%E8%BF%9B%E6%9D%A5"><span class="toc-text">安装完成后, 退出finalshell 重新进来:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Windows%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEAnaconda"><span class="toc-text">2. Windows系统配置Anaconda</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80Anaconda-Prompt-%E5%87%BA%E7%8E%B0bash-%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-text">打开Anaconda Prompt 出现bash 安装成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90"><span class="toc-text">1.   配置国内源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-text">1. 建虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8A%E4%BC%A0%E3%80%81%E8%A7%A3%E5%8E%8Bspark%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-text">2.   上传、解压spark安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">配置环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PYSPARK-PYTHON%E5%92%8C-JAVA-HOME-%E9%9C%80%E8%A6%81%E5%90%8C%E6%A0%B7%E9%85%8D%E7%BD%AE%E5%9C%A8-root-bashrc%E4%B8%AD"><span class="toc-text">PYSPARK_PYTHON和 JAVA_HOME 需要同样配置在: &#x2F;root&#x2F;.bashrc中</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95"><span class="toc-text">4.   测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%9F%A5%E7%9C%8Bspark%EF%BC%9A4040%E7%AB%AF%E5%8F%A3%EF%BC%88192-168-88-151-4040%EF%BC%89"><span class="toc-text">5.   查看spark：4040端口（192.168.88.151:4040）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8E%86%E5%8F%B2%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">1.历史服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9B%86%E7%BE%A4%E8%A7%84%E5%88%92"><span class="toc-text">2.集群规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85"><span class="toc-text">3.安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%9C%A8%E6%89%80%E6%9C%89%E6%9C%BA%E5%99%A8%E5%AE%89%E8%A3%85Python-Anaconda"><span class="toc-text">（1）在所有机器安装Python(Anaconda)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%90%8C%E4%B8%8A"><span class="toc-text">步骤同上</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-node1%E4%B8%8A%E5%88%86%E5%8F%91%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%88-x2F-etc-x2F-profile%E3%80%81-x2F-root-x2F-bashrc%EF%BC%89"><span class="toc-text">4.node1上分发环境变量（&#x2F;etc&#x2F;profile、&#x2F;root&#x2F;bashrc）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%85%8D%E7%BD%AEworkers%E6%96%87%E4%BB%B6-%E8%B7%AF%E5%BE%84%EF%BC%9A-x2F-export-x2F-server-x2F-spark-x2F-conf"><span class="toc-text">5. 配置workers文件 路径：&#x2F;export&#x2F;server&#x2F;spark&#x2F;conf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%85%8D%E7%BD%AEspark-env-sh%E6%96%87%E4%BB%B6"><span class="toc-text">6. 配置spark-env.sh文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%94%B9%E5%90%8D"><span class="toc-text">1. 改名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%96%E8%BE%91spark-env-sh-%E5%9C%A8%E5%BA%95%E9%83%A8%E8%BF%BD%E5%8A%A0%E5%A6%82%E4%B8%8B%E5%86%85%E5%AE%B9"><span class="toc-text">2. 编辑spark-env.sh, 在底部追加如下内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E9%85%8D%E7%BD%AEspark-defaults-conf%E6%96%87%E4%BB%B6"><span class="toc-text">7. 配置spark-defaults.conf文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%94%B9%E5%90%8D-1"><span class="toc-text">1. 改名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9-%E8%BF%BD%E5%8A%A0%E5%A6%82%E4%B8%8B%E5%86%85%E5%AE%B9"><span class="toc-text">2. 修改内容, 追加如下内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E9%85%8D%E7%BD%AElog4j-properties-%E6%96%87%E4%BB%B6-%E5%8F%AF%E9%80%89%E9%85%8D%E7%BD%AE"><span class="toc-text">8. 配置log4j.properties 文件 [可选配置]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%94%B9%E5%90%8D-2"><span class="toc-text">1. 改名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9-%E5%8F%82%E8%80%83%E4%B8%8B%E5%9B%BE"><span class="toc-text">2. 修改内容 参考下图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%B0%86Spark%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%E5%A4%B9-%E5%88%86%E5%8F%91%E5%88%B0%E5%85%B6%E5%AE%83%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A"><span class="toc-text">9. 将Spark安装文件夹  分发到其它的服务器上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%90%AF%E5%8A%A8%E5%8E%86%E5%8F%B2%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">10.启动历史服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E5%90%AF%E5%8A%A8Spark%E7%9A%84Master%E5%92%8CWorker%E8%BF%9B%E7%A8%8B"><span class="toc-text">11. 启动Spark的Master和Worker进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E8%BF%9E%E6%8E%A5%E5%88%B0StandAlone%E9%9B%86%E7%BE%A4"><span class="toc-text">12. 连接到StandAlone集群</span></a></li></ol>
-    </div>
-  </section>
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -4022,7 +3821,7 @@ NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-local/","name":"Spark-local"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-local/Anaconda/","name":"Anaconda"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-local/Anaconda/pyspark/","name":"pyspark"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-local/Anaconda/pyspark/Master/","name":"Master"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark-local/Anaconda/pyspark/Master/Worker/","name":"Worker"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/28/《Spark local& stand-alone配置》/","name":"《Spark local& stand-alone配置》"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"《Spark local& stand-alone配置》","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/","wordCount":0,"datePublished":"2022-05-28T09:30:00.000Z","dateModified":"2022-06-01T08:44:36.581Z","articleSection":"Spark-local","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/22/《Kafka环境配置》/","name":"《Kafka环境配置》"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"《Kafka环境配置》","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/22/%E3%80%8AKafka%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/","wordCount":0,"datePublished":"2022-06-22T05:42:30.000Z","dateModified":"2022-06-22T05:43:35.476Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

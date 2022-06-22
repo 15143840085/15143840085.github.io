@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/05/28/《spark基础环境配置》-1/"/>
+  <link rel="canonical" href="http://example.com/2022/06/22/《kafka eagle监控系统》/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,32 +31,20 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>《Spark基础环境配置》 - liusongtao����ҳ</title>
-  <meta name="keywords" content="JAVA,HADOOP,ZOOKEEPER,Spark,anaconda,stand-alone,Spark HA,Yarn,pyspark,Spark-local,JDK,HDFS,null">
+  <title>《kafka eagle监控系统》 - liusongtao����ҳ</title>
+  <meta name="keywords" content="null">
   <meta desc name="description" content="��ӭ����liusongtao����ҳ - liusongtao - liusongtao����ҳ">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Spark基础环境配置》">
-<meta property="og:url" content="http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/index.html">
+<meta property="og:title" content="《kafka eagle监控系统》">
+<meta property="og:url" content="http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/index.html">
 <meta property="og:site_name" content="liusongtao����ҳ">
-<meta property="og:description" content="一、基础环境1.主机名   服务器 运行角色    node1.itcast.cn NameNode DataNode  ResourceManager NodeManager QuorumPeerMain Master Worker   node2.itcast.cn SecondaryNameNode  DataNode NodeManager QuorumPeerMain Worker">
+<meta property="og:description" content="简介kafka eagle（kafka鹰） 是一款由国内公司开源的Kafka集群监控系统，可以用来监视kafka集群的broker状态、Topic信息、IO、内存、consumer线程、偏移量等信息，并进行可视化图表展示。独特的KQL还可以通过SQL在线查询kafka中的数据。 官网地址 https:&#x2F;&#x2F;www.kafka-eagle.org&#x2F;github地址:https:&#x2F;&#x2F;github.com">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-05-28T09:19:00.000Z">
-<meta property="article:modified_time" content="2022-06-01T11:40:54.875Z">
+<meta property="article:published_time" content="2022-06-22T05:51:16.000Z">
+<meta property="article:modified_time" content="2022-06-22T05:52:30.709Z">
 <meta property="article:author" content="liusongtao">
-<meta property="article:tag" content="JAVA">
-<meta property="article:tag" content="HADOOP">
-<meta property="article:tag" content="ZOOKEEPER">
-<meta property="article:tag" content="Spark">
-<meta property="article:tag" content="anaconda">
-<meta property="article:tag" content="stand-alone">
-<meta property="article:tag" content="Spark HA">
-<meta property="article:tag" content="Yarn">
-<meta property="article:tag" content="pyspark">
-<meta property="article:tag" content="Spark-local">
-<meta property="article:tag" content="JDK">
-<meta property="article:tag" content="HDFS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1762,7 +1750,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654083952071),
+    lastupdate: new Date(1655877611263),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2533,7 +2521,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="liusongtao����ҳ">
   </span>
@@ -2554,7 +2542,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        《Spark基础环境配置》
+        《kafka eagle监控系统》
       </h1>
       <div class='new-meta-box'>
         
@@ -2571,36 +2559,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/Java/">Java</a><span class="sep"></span><a class="category-link" href="/categories/Java/Hadoop/">Hadoop</a><span class="sep"></span><a class="category-link" href="/categories/Java/Hadoop/Zookeeper/">Zookeeper</a><span class="sep"></span><a class="category-link" href="/categories/Java/Hadoop/Zookeeper/Spark/">Spark</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Java/Hadoop/" itemprop="url"><span itemprop="name">Hadoop</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Java/Hadoop/Zookeeper/" itemprop="url"><span itemprop="name">Zookeeper</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Java/Hadoop/Zookeeper/Spark/" itemprop="url"><span itemprop="name">Spark</span></a>
-      </span>
-    
-  </div>
-
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-28T17:19:00+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-22T13:51:16+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年5月28日</p>
+    <p>发布于：2022年6月22日</p>
   </a>
 </div>
 
@@ -2633,189 +2599,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="一、基础环境"><a href="#一、基础环境" class="headerlink" title="一、基础环境"></a>一、基础环境</h1><div class="story post-story"><h2 id="1-主机名"><a href="#1-主机名" class="headerlink" title="1.主机名"></a>1.主机名</h2><table>
-<thead>
-<tr>
-<th align="center">服务器</th>
-<th align="left">运行角色</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">node1.itcast.cn</td>
-<td align="left">NameNode DataNode  ResourceManager NodeManager QuorumPeerMain Master Worker</td>
-</tr>
-<tr>
-<td align="center">node2.itcast.cn</td>
-<td align="left">SecondaryNameNode  DataNode NodeManager QuorumPeerMain Worker</td>
-</tr>
-<tr>
-<td align="center">node3.itcast.cn</td>
-<td align="left">DataNode NodeManager QuorumPeerMain Worker</td>
-</tr>
-</tbody></table>
-</div><div class="story post-story"><h2 id="2-配置hosts：（注：三台服务器同时配置）"><a href="#2-配置hosts：（注：三台服务器同时配置）" class="headerlink" title="2.配置hosts：（注：三台服务器同时配置）"></a>2.配置hosts：（注：三台服务器同时配置）</h2><h3 id="vim-x2F-etc-x2F-hosts"><a href="#vim-x2F-etc-x2F-hosts" class="headerlink" title="vim &#x2F;etc&#x2F;hosts"></a>vim &#x2F;etc&#x2F;hosts</h3><p><img src="/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/Blog\source_posts\《Spark基础环境配置》-1\clip_image002.jpg" class="lazyload" data-srcset="/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/Blog\source_posts\《Spark基础环境配置》-1\clip_image002.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>测试：（每台服务器都测试）</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image004.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image004.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="3-集群时间同步：（注：三台服务器同时进行）"><a href="#3-集群时间同步：（注：三台服务器同时进行）" class="headerlink" title="3.集群时间同步：（注：三台服务器同时进行）"></a>3.集群时间同步：（注：三台服务器同时进行）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntpdate </span><br><span class="line"></span><br><span class="line">ntpdate ntp4.aliyun.com</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image006.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image006.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="4-ssh免密登录-node1执行-gt-node1-node2-node3"><a href="#4-ssh免密登录-node1执行-gt-node1-node2-node3" class="headerlink" title="4. ssh免密登录(node1执行-&gt;node1|node2|node3)"></a>4. ssh免密登录(node1执行-&gt;node1|node2|node3)</h2><p>ssh-keygen #4个回车 生成公钥、私钥</p>
-<p>ssh-copy-id node1、ssh-copy-id node2、ssh-copy-id node3 #</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image008.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image008.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h1 id="二、安装、配置JDK"><a href="#二、安装、配置JDK" class="headerlink" title="二、安装、配置JDK"></a>二、安装、配置JDK</h1></div><div class="story post-story"><h2 id="1-将安装包上传至-x2F-export-x2F-server-目录下"><a href="#1-将安装包上传至-x2F-export-x2F-server-目录下" class="headerlink" title="1.将安装包上传至 &#x2F;export&#x2F;server 目录下"></a>1.将安装包上传至 &#x2F;export&#x2F;server 目录下</h2><h2 id="2-解压安装包"><a href="#2-解压安装包" class="headerlink" title="2.解压安装包"></a>2.解压安装包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf jdk-8u65-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-
-
-
-</div><div class="story post-story"><h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h2><p>vim &#x2F;etc&#x2F;profile</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#JDK_PATH</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/export/server/jdk1.8.0_241</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line"></span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br></pre></td></tr></table></figure>
-
-<p>source &#x2F;etc&#x2F;profile</p>
-</div><div class="story post-story"><h2 id="4-验证是否安装成功"><a href="#4-验证是否安装成功" class="headerlink" title="4.验证是否安装成功"></a>4.验证是否安装成功</h2><p>java -version</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image010.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image010.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h1 id="三、安装、配置hadoop"><a href="#三、安装、配置hadoop" class="headerlink" title="三、安装、配置hadoop"></a>三、安装、配置hadoop</h1></div><div class="story post-story"><h2 id="集群规划"><a href="#集群规划" class="headerlink" title="集群规划"></a>集群规划</h2><table>
-<thead>
-<tr>
-<th>主机</th>
-<th>角色</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>node1</td>
-<td>NN  DN RM NM</td>
-</tr>
-<tr>
-<td>node2</td>
-<td>SNN  DN NM</td>
-</tr>
-<tr>
-<td>Node</td>
-<td>DN  NM</td>
-</tr>
-</tbody></table>
-</div><div class="story post-story"><h2 id="1-上传hadoop安装包至-node1-x2F-export-x2F-server-并解压"><a href="#1-上传hadoop安装包至-node1-x2F-export-x2F-server-并解压" class="headerlink" title="1.   上传hadoop安装包至 node1 &#x2F;export&#x2F;server 并解压"></a>1.   上传hadoop安装包至 node1 &#x2F;export&#x2F;server 并解压</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf hadoop-3.3.0-Centos7-64-with-snappy.tar.gz</span><br></pre></td></tr></table></figure>
+    <p>简介<br>kafka eagle（kafka鹰） 是一款由国内公司开源的Kafka集群监控系统，可以用来监视kafka集群的broker状态、Topic信息、IO、内存、consumer线程、偏移量等信息，并进行可视化图表展示。独特的KQL还可以通过SQL在线查询kafka中的数据。</p>
+<p>官网地址 <a target="_blank" rel="noopener" href="https://www.kafka-eagle.org/">https://www.kafka-eagle.org/</a><br>github地址:<a target="_blank" rel="noopener" href="https://github.com/smartloli/kafka-eagle">https://github.com/smartloli/kafka-eagle</a></p>
+<p>下载<br>下载地址<a target="_blank" rel="noopener" href="http://download.kafka-eagle.org/">http://download.kafka-eagle.org/</a></p>
+<p>本文安装的是2.0.5版本，支持Kafka版本0.8，0.9.x，0.10.x，0.11.x，1.x，2.x</p>
+<p>wget <a target="_blank" rel="noopener" href="https://github.com/smartloli/kafka-eagle-bin/archive/v2.0.5.tar.gz">https://github.com/smartloli/kafka-eagle-bin/archive/v2.0.5.tar.gz</a></p>
+<p>安装<br>解压两次<br>tar -zvxf v2.0.5.tar.gz </p>
+<p>cd kafka-eagle-bin-2.0.5&#x2F;<br>tar -zxvf kafka-eagle-web-2.0.5-bin.tar.gz -C &#x2F;opt&#x2F;bd&#x2F;<br>cd ..&#x2F;<br>mv kafka-eagle-web-2.0.5 kafka-eagle</p>
+<p>创建mysql数据库ke 用来储存元数据<br>MySQL &gt; create database ke;</p>
+<p>设置环境变量<br>vim &#x2F;etc&#x2F;profile<br>export KE_HOME&#x3D;&#x2F;opt&#x2F;bd&#x2F;kafka-eagle<br>export PATH&#x3D;$PATH:$KE_HOME&#x2F;bin<br>source  &#x2F;etc&#x2F;profile</p>
+<p>基本设置<br>修改配置文件</p>
+<p>cd ${KE_HOME}&#x2F;conf<br>vim system-config.properties</p>
+<p>配置zookeeper地址<br>kafka.eagle.zk.cluster.alias&#x3D;cluster1<br>cluster1.zk.list&#x3D;tdn1:2181,tdn2:2181,tdn3:2181&#x2F;kafka</p>
+<p>重要提示</p>
+<p>此处示例的kafka是2.4版本 所以zookeeper地址后加上 &#x2F;kafka， 如果不清楚版本，建议复制kafka配置文件的zookeeper配置(CDH6.3.x及以下不需要加)<br>mysql 8.0 在当前版本使用中会有问题<br>配置Mysql<br>注释掉sqlite jdbc driver address 修改mysql jdbc driver address 改成自己的MySQL密码</p>
+<p>kafka.eagle.driver&#x3D;com.mysql.cj.jdbc.Driver<br>kafka.eagle.url&#x3D;jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;ke?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;zeroDateTimeBehavior&#x3D;convertToNull<br>#Mysql密码<br>kafka.eagle.username&#x3D;root<br>kafka.eagle.password&#x3D;123456</p>
+<p>开启JMX监控<br>eagle通过jmx收集一些指标，在使用jmx之前需要确保kafka开启了jmx监控</p>
+<p>Apache版本：<br>开启方法1：kafka启动时要添加JMX_PORT&#x3D;9999</p>
+<p>开启方法2：vim bin&#x2F;kafka-server-start.sh</p>
+<p>…<br>if [ “x$KAFKA_HEAP_OPTS” &#x3D; “x” ]; then<br>    export KAFKA_HEAP_OPTS&#x3D;”-server -Xms2G -Xmx2G -XX:PermSize&#x3D;128m -XX:+UseG1GC -XX:MaxGCPauseMillis&#x3D;200 -XX:ParallelGCThreads&#x3D;8 -XX:ConcGCThreads&#x3D;5 -XX:InitiatingHeapOccupancyPercent&#x3D;70”<br>    export JMX_PORT&#x3D;”9999”<br>fi<br>CDH<br>修改每个broker节点的broker_java_opts：</p>
+<p>-server -XX:+UseG1GC   -XX:MaxGCPauseMillis&#x3D;20   -XX:InitiatingHeapOccupancyPercent&#x3D;35   -XX:G1HeapRegionSize&#x3D;16M -XX:MinMetaspaceFreeRatio&#x3D;50   -XX:MaxMetaspaceFreeRatio&#x3D;80   -XX:+DisableExplicitGC   -Djava.awt.headless&#x3D;true   -Djava.net.preferIPv4Stack&#x3D;true   -Dcom.sun.management.jmxremote&#x3D;true<br>1</p>
+<p>其他可选设置 （普通用户忽略，保持默认即可）<br>配置项	默认值	解释<br>kafka.eagle.sql.fix.error	false	kafka sql查询失败是否允许自动修复<br>cluster1.zk.list	ke01:2181,ke02:2181,ke03:2181&#x2F;cluster1	zookeeper 集群地址.<br>kafka.zk.limit.size	25	eagle连接 Zookeeper 的最大client数.<br>cluster1.kafka.eagle.broker.size	10	Kafka broker size online list.<br>kafka.eagle.webui.port	8048	Kafka Eagle webui 端口.<br>cluster1.kafka.eagle.offset.storage	kafka	Kafka消费者offsets 存储位置kafka.0.10前版本是zookeeper<br>kafka.eagle.sql.topic.records.max	5000	Kafka Eagle SQL 每次查询的最大记录数<br>如果Kafka开启了安全认证如则需要修改sasl设置<br>cluster1.kafka.eagle.sasl.enable&#x3D;true<br>cluster1.kafka.eagle.sasl.protocol&#x3D;SASL_PLAINTEXT<br>cluster1.kafka.eagle.sasl.mechanism&#x3D;GSSAPI<br>cluster1.kafka.eagle.sasl.jaas.config&#x3D;com.sun.security.auth.module.Krb5LoginModule required useKeyTab&#x3D;true storeKey&#x3D;true keyTab&#x3D;”&#x2F;etc&#x2F;security&#x2F;keytabs&#x2F;kafka_client.keytab” principal&#x3D;”<a href="mailto:&#x6b;&#97;&#x66;&#107;&#x61;&#45;&#101;&#97;&#x67;&#x6c;&#x65;&#x2e;&#x6f;&#114;&#103;&#x40;&#x45;&#x58;&#x41;&#77;&#80;&#76;&#x45;&#46;&#67;&#x4f;&#x4d;">&#x6b;&#97;&#x66;&#107;&#x61;&#45;&#101;&#97;&#x67;&#x6c;&#x65;&#x2e;&#x6f;&#114;&#103;&#x40;&#x45;&#x58;&#x41;&#77;&#80;&#76;&#x45;&#46;&#67;&#x4f;&#x4d;</a>“;</p>
+<h1 id="make-sure-there-is-a-local-ticket-cache-“klist-l”-to-view"><a href="#make-sure-there-is-a-local-ticket-cache-“klist-l”-to-view" class="headerlink" title="make sure there is a local ticket cache “klist -l” to view"></a>make sure there is a local ticket cache “klist -l” to view</h1><h1 id="cluster1-kafka-eagle-sasl-jaas-config-x3D-com-sun-security-auth-module-Krb5LoginModule-required-useTicketCache-x3D-true-renewTicket-x3D-true-serviceName-x3D-”kafka-eagle-org”"><a href="#cluster1-kafka-eagle-sasl-jaas-config-x3D-com-sun-security-auth-module-Krb5LoginModule-required-useTicketCache-x3D-true-renewTicket-x3D-true-serviceName-x3D-”kafka-eagle-org”" class="headerlink" title="cluster1.kafka.eagle.sasl.jaas.config&#x3D;com.sun.security.auth.module.Krb5LoginModule required useTicketCache&#x3D;true renewTicket&#x3D;true serviceName&#x3D;”kafka-eagle.org”;"></a>cluster1.kafka.eagle.sasl.jaas.config&#x3D;com.sun.security.auth.module.Krb5LoginModule required useTicketCache&#x3D;true renewTicket&#x3D;true serviceName&#x3D;”kafka-eagle.org”;</h1><h1 id="if-your-kafka-cluster-doesn’t-require-it-you-don’t-need-to-set-it-up"><a href="#if-your-kafka-cluster-doesn’t-require-it-you-don’t-need-to-set-it-up" class="headerlink" title="if your kafka cluster doesn’t require it, you don’t need to set it up"></a>if your kafka cluster doesn’t require it, you don’t need to set it up</h1><h1 id="cluster1-kafka-eagle-sasl-client-id-x3D"><a href="#cluster1-kafka-eagle-sasl-client-id-x3D" class="headerlink" title="cluster1.kafka.eagle.sasl.client.id&#x3D;"></a>cluster1.kafka.eagle.sasl.client.id&#x3D;</h1><p>如果开启了zookeeper acl认证 需要修改以下配置</p>
+<h1 id="Add-zookeeper-acl"><a href="#Add-zookeeper-acl" class="headerlink" title="Add zookeeper acl"></a>Add zookeeper acl</h1><p>cluster1.zk.acl.enable&#x3D;true<br>cluster1.zk.acl.schema&#x3D;digest<br>cluster1.zk.acl.username&#x3D;test<br>cluster1.zk.acl.password&#x3D;test123</p>
+<p>kafka 如果开启了acl ssl 需要修改配置<br>######################################</p>
+<h1 id="kafka-jmx-acl-and-ssl-authenticate"><a href="#kafka-jmx-acl-and-ssl-authenticate" class="headerlink" title="kafka jmx acl and ssl authenticate"></a>kafka jmx acl and ssl authenticate</h1><p>######################################<br>cluster1.kafka.eagle.jmx.acl&#x3D;true<br>cluster1.kafka.eagle.jmx.user&#x3D;keadmin<br>cluster1.kafka.eagle.jmx.password&#x3D;keadmin123<br>cluster1.kafka.eagle.jmx.ssl&#x3D;false<br>cluster1.kafka.eagle.jmx.truststore.location&#x3D;&#x2F;Users&#x2F;dengjie&#x2F;workspace&#x2F;ssl&#x2F;certificates&#x2F;kafka.truststore<br>cluster1.kafka.eagle.jmx.truststore.password&#x3D;ke123456</p>
+<p>######################################</p>
+<p>kafka jmx uri（建议保持默认）</p>
+<p>cluster1.kafka.eagle.jmx.uri&#x3D;service:jmx:rmi:&#x2F;&#x2F;&#x2F;jndi&#x2F;rmi:&#x2F;&#x2F;%s&#x2F;jmxrmi</p>
+<p>启动<br>$KE_HOME&#x2F;bin&#x2F;ke.sh start</p>
+<p>进度条100%后会出现启动成功界面，端口默认8048</p>
+<p>输入密码 admin&#x2F;123456 登录即可</p>
+<p>其他命令</p>
+<p>$KE_HOME&#x2F;bin&#x2F;ke.sh [start|status|stop|restart|stats] </p>
+<p>TIP<br>可以设置域名让浏览器缓存js文件，大大提高加载速度。</p>
 
 
-
-</div><div class="story post-story"><h2 id="2-配置hadoop环境变量"><a href="#2-配置hadoop环境变量" class="headerlink" title="2.   配置hadoop环境变量"></a>2.   配置hadoop环境变量</h2><p>将hadoop添加到环境变量（三台服务器均要添加）</p>
-<p>vi &#x2F;etc&#x2F;profile</p>
-<p>#填写以下配置文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#HADOOP_PATH</span><br><span class="line"></span><br><span class="line">export HADOOP_HOME=/export/server/hadoop-3.3.0</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin</span><br></pre></td></tr></table></figure>
-
-<p>source &#x2F;etc&#x2F;profile</p>
-<p>分发hadoop环境变量给node2、node3</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -r /etc/profile root@node2:$PWD</span><br><span class="line"></span><br><span class="line">scp -r /etc/profile root@node3:$PWD</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="3-编辑hadoop环境配置文件hadoop-env-sh"><a href="#3-编辑hadoop环境配置文件hadoop-env-sh" class="headerlink" title="3.   编辑hadoop环境配置文件hadoop-env.sh"></a>3.   编辑hadoop环境配置文件hadoop-env.sh</h2><p>路径：&#x2F;export&#x2F;server&#x2F;hadoop-3.3.0&#x2F;etc&#x2F;hadoop</p>
-<p>vi hadoop-env.sh</p>
-<h3 id="填写以下配置文件："><a href="#填写以下配置文件：" class="headerlink" title="#填写以下配置文件："></a>#填写以下配置文件：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/export/server/jdk1.8.0_241</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">\#Hadoop各个组件启动运行身份</span><br><span class="line"></span><br><span class="line">export HDFS_NAMENODE_USER=root</span><br><span class="line"></span><br><span class="line">export HDFS_DATANODE_USER=root</span><br><span class="line"></span><br><span class="line">export HDFS_SECONDARYNAMENODE_USER=root</span><br><span class="line"></span><br><span class="line">export YARN_RESOURCEMANAGER_USER=root</span><br><span class="line"></span><br><span class="line">export YARN_NODEMANAGER_USER=root</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image012.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image012.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="4-编辑core-site-xml（注：配置文件在当前路径下）"><a href="#4-编辑core-site-xml（注：配置文件在当前路径下）" class="headerlink" title="4. 编辑core-site.xml（注：配置文件在当前路径下）"></a>4. 编辑core-site.xml（注：配置文件在当前路径下）</h2><h3 id="填写以下配置文件：-1"><a href="#填写以下配置文件：-1" class="headerlink" title="#填写以下配置文件："></a>#填写以下配置文件：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 设置默认使用的文件系统 Hadoop支持file、HDFS、GFS、ali|Amazon云等文件系统 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;hdfs://node1:8020&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;!-- 设置Hadoop本地保存数据路径 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;/export/data/hadoop-3.3.0&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;!-- 设置HDFS web UI用户身份 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;hadoop.http.staticuser.user&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;root&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;!-- 整合hive 用户代理设置 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;hadoop.proxyuser.root.hosts&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;*&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;hadoop.proxyuser.root.groups&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;*&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;!-- 文件系统垃圾桶保存时间 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;fs.trash.interval&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;1440&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image014.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image014.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image016.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image016.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<ol start="5">
-<li></div><div class="story post-story"><h2 id="编辑hdfs-site-xml（注：配置文件在当前路径下）"><a href="#编辑hdfs-site-xml（注：配置文件在当前路径下）" class="headerlink" title="编辑hdfs-site.xml（注：配置文件在当前路径下）"></a>编辑hdfs-site.xml（注：配置文件在当前路径下）</h2></li>
-</ol>
-<p>#填写以下配置文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 设置SNN进程运行机器位置信息 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;node2:9868&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image018.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image018.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<ol start="6">
-<li></div><div class="story post-story"><h2 id="编辑mapred-site-xml（注：配置文件在当前路径下）"><a href="#编辑mapred-site-xml（注：配置文件在当前路径下）" class="headerlink" title="编辑mapred-site.xml（注：配置文件在当前路径下）"></a>编辑mapred-site.xml（注：配置文件在当前路径下）</h2></li>
-</ol>
-<p>#填写以下配置文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 设置MR程序默认运行模式： yarn集群模式 local本地模式 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;yarn&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;!-- MR程序历史服务地址 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;node1:10020&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;!-- MR程序历史服务器web端地址 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;node1:19888&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;yarn.app.mapreduce.am.env&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;mapreduce.map.env&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;mapreduce.reduce.env&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image020.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image020.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image022.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image022.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="7-编辑yarn-site-xml（注：配置文件在当前路径下）"><a href="#7-编辑yarn-site-xml（注：配置文件在当前路径下）" class="headerlink" title="7. 编辑yarn-site.xml（注：配置文件在当前路径下）"></a>7. 编辑yarn-site.xml（注：配置文件在当前路径下）</h2><p>#填写以下配置文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 设置YARN集群主角色运行机器位置 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;value&gt;node1&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 是否将对容器实施物理内存限制 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;yarn.nodemanager.pmem-check-enabled&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;false&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&lt;!-- 是否将对容器实施虚拟内存限制。 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;yarn.nodemanager.vmem-check-enabled&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;false&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 开启日志聚集 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;true&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置yarn历史服务器地址 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;yarn.log.server.url&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;value&gt;http://node1:19888/jobhistory/logs&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 历史日志保存的时间 7天 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line"> &lt;name&gt;yarn.log-aggregation.retain-seconds&lt;/name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;value&gt;604800&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image024.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image024.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image026.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image026.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="8-编辑workers（注：配置文件在当前路径下）"><a href="#8-编辑workers（注：配置文件在当前路径下）" class="headerlink" title="8. 编辑workers（注：配置文件在当前路径下）"></a>8. 编辑workers（注：配置文件在当前路径下）</h2><p>#填写且仅保留以下内容（多于内容删掉）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node1.itcast.cn</span><br><span class="line"></span><br><span class="line">node2.itcast.cn</span><br><span class="line"></span><br><span class="line">node3.itcast.cn</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="9-分发同步hadoop安装包"><a href="#9-分发同步hadoop安装包" class="headerlink" title="9. 分发同步hadoop安装包"></a>9. 分发同步hadoop安装包</h2><p>cd &#x2F;export&#x2F;server</p>
-<p>scp -r hadoop-3.3.0 root@node2:$PWD</p>
-<p>scp -r hadoop-3.3.0 root@node3:$PWD</p>
-</div><div class="story post-story"><h2 id="10-Hadoop集群启动"><a href="#10-Hadoop集群启动" class="headerlink" title="10. Hadoop集群启动"></a>10. Hadoop集群启动</h2><p>#（&#x3D;&#x3D;首次启动&#x3D;&#x3D;）格式化namenode 命令仅运行一次</p>
-<p>hdfs namenode -format</p>
-<ol start="11">
-<li></div><div class="story post-story"><h2 id="脚本一键启动"><a href="#脚本一键启动" class="headerlink" title="脚本一键启动"></a>脚本一键启动</h2></li>
-</ol>
-<p>start-dfs.sh</p>
-<p>start-yarn.sh</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image028.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image028.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>Web UI页面</p>
-<p>- HDFS集群：<a target="_blank" rel="noopener" href="http://node1:9870/">http://node1:9870/</a></p>
-<p>- YARN集群：<a target="_blank" rel="noopener" href="http://node1:8088/">http://node1:8088/</a></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image030.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image030.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h1 id="四、安装、配置zookeeper"><a href="#四、安装、配置zookeeper" class="headerlink" title="四、安装、配置zookeeper"></a>四、安装、配置zookeeper</h1></div><div class="story post-story"><h2 id="1-配置hosts：（三台服务器均需修改）"><a href="#1-配置hosts：（三台服务器均需修改）" class="headerlink" title="1.配置hosts：（三台服务器均需修改）"></a>1.配置hosts：（三台服务器均需修改）</h2><table>
-<thead>
-<tr>
-<th>vi  &#x2F;etc&#x2F;hosts</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>192.168.88.151</td>
-<td>node1</td>
-<td>node1.itcast.cn</td>
-</tr>
-<tr>
-<td>192.168.88.152</td>
-<td>node2</td>
-<td>node2.itcast.cn</td>
-</tr>
-<tr>
-<td>192.168.88.153</td>
-<td>node3</td>
-<td>node3.itcast.cn</td>
-</tr>
-</tbody></table>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image031.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image031.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="2-上传zookeeper安装包、解压安装包"><a href="#2-上传zookeeper安装包、解压安装包" class="headerlink" title="2.上传zookeeper安装包、解压安装包"></a>2.上传zookeeper安装包、解压安装包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /export/software</span><br><span class="line"></span><br><span class="line">tar -zxvf zookeeper.tar.gz -C /export/server/</span><br><span class="line"></span><br><span class="line">cd /export/server/</span><br><span class="line"></span><br><span class="line">ln -s zookeeper/ zookeeper</span><br></pre></td></tr></table></figure>
-
-
-
-</div><div class="story post-story"><h2 id="3-修改配置文件（node1上进行）"><a href="#3-修改配置文件（node1上进行）" class="headerlink" title="3.修改配置文件（node1上进行）"></a>3.修改配置文件（node1上进行）</h2><h3 id="（1）复制zoo-cfg-x2F-配置zoo-cfg"><a href="#（1）复制zoo-cfg-x2F-配置zoo-cfg" class="headerlink" title="（1）复制zoo.cfg &#x2F; 配置zoo.cfg"></a>（1）复制zoo.cfg &#x2F; 配置zoo.cfg</h3><p>cd &#x2F;export&#x2F;server&#x2F;zookeeper&#x2F;conf&#x2F;</p>
-<p>cp zoo_sample.cfg zoo.cfg</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image033.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image033.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>vim zoo.cfg</p>
-<h3 id="修改以下内容"><a href="#修改以下内容" class="headerlink" title="#修改以下内容"></a>#修改以下内容</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#Zookeeper的数据存放目录</span><br><span class="line"></span><br><span class="line">dataDir=/export/server/zookeeper/zkdatas</span><br><span class="line"></span><br><span class="line">\# 保留多少个快照</span><br><span class="line"></span><br><span class="line">autopurge.snapRetainCount=3</span><br><span class="line"></span><br><span class="line">\# 日志多少小时清理一次</span><br><span class="line"></span><br><span class="line">autopurge.purgeInterval=1</span><br><span class="line"></span><br><span class="line">\# 集群中服务器地址</span><br><span class="line"></span><br><span class="line">server.1=node1:2888:3888</span><br><span class="line"></span><br><span class="line">server.2=node2:2888:3888</span><br><span class="line"></span><br><span class="line">server.3=node3:2888:3888</span><br></pre></td></tr></table></figure>
-
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image035.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image035.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="4-添加myid配置"><a href="#4-添加myid配置" class="headerlink" title="4. 添加myid配置"></a>4. 添加myid配置</h2><p>在node1主机的&#x2F;export&#x2F;server&#x2F;zookeeper&#x2F;zkdatas&#x2F;这个路径下创建一个文件，文件名为myid ,文件内容为1</p>
-<p>mkdir -p &#x2F;export&#x2F;server&#x2F;zookeeper&#x2F;zkdatas&#x2F;</p>
-<p>echo 1 &gt; &#x2F;export&#x2F;server&#x2F;zookeeper&#x2F;zkdatas&#x2F;myid</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image037.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image037.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="5-安装包分发并修改myid的值"><a href="#5-安装包分发并修改myid的值" class="headerlink" title="5. 安装包分发并修改myid的值"></a>5. 安装包分发并修改myid的值</h2><h3 id="1-在node1主机上，将安装包分发到其他机器"><a href="#1-在node1主机上，将安装包分发到其他机器" class="headerlink" title="(1) 在node1主机上，将安装包分发到其他机器"></a>(1) 在node1主机上，将安装包分发到其他机器</h3><p>第一台机器上面执行以下两个命令</p>
-<p>cd &#x2F;export&#x2F;server&#x2F;</p>
-<p>scp -r &#x2F;export&#x2F;server&#x2F;zookeeper-3.4.6&#x2F; node2:$PWD </p>
-<p>scp -r &#x2F;export&#x2F;server&#x2F;zookeeper-3.4.6&#x2F; node3:$PWD</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image039.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image039.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image041.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image041.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h3 id="（2）第二台机器上建立软连接-并修改myid的值为2"><a href="#（2）第二台机器上建立软连接-并修改myid的值为2" class="headerlink" title="（2）第二台机器上建立软连接, 并修改myid的值为2"></a>（2）第二台机器上建立软连接, 并修改myid的值为2</h3><p>cd &#x2F;export&#x2F;server&#x2F;</p>
-<p>ln -s zookeeper-3.4.6&#x2F; zookeeper </p>
-<p>echo 2 &gt; &#x2F;export&#x2F;server&#x2F;zookeeper&#x2F;zkdatas&#x2F;myid</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image043.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image043.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h3 id="3-第三台机器上建立软连接-并修改myid的值为3"><a href="#3-第三台机器上建立软连接-并修改myid的值为3" class="headerlink" title="(3) 第三台机器上建立软连接, 并修改myid的值为3"></a>(3) 第三台机器上建立软连接, 并修改myid的值为3</h3><p>cd &#x2F;export&#x2F;server&#x2F;</p>
-<p>ln -s zookeeper-3.4.6&#x2F; zookeeper </p>
-<p>echo 3 &gt; &#x2F;export&#x2F;server&#x2F;zookeeper&#x2F;zkdatas&#x2F;myid</p>
-<p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image045.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image045.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-</div><div class="story post-story"><h2 id="6-配置环境变量、脚本一键启动zookeeper"><a href="#6-配置环境变量、脚本一键启动zookeeper" class="headerlink" title="6.配置环境变量、脚本一键启动zookeeper"></a>6.配置环境变量、脚本一键启动zookeeper</h2><p>vi &#x2F;etc&#x2F;profile</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export ZOOKEEPER_HOME=/export/server/zookeeper</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$ZOOKEEPER_HOME/bin</span><br></pre></td></tr></table></figure>
-
-<p>source &#x2F;etc&#x2F;profile</p>
-</div><div class="story post-story"><h2 id="脚本一键启动-1"><a href="#脚本一键启动-1" class="headerlink" title="脚本一键启动"></a>脚本一键启动</h2><p>cd bin&#x2F;</p>
-<h3 id="vi-zkall-sh"><a href="#vi-zkall-sh" class="headerlink" title="vi zkall.sh"></a>vi zkall.sh</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">if [ $# -eq 0 ]</span><br><span class="line"></span><br><span class="line">then</span><br><span class="line"></span><br><span class="line">echo &quot;please input param:start stop&quot;</span><br><span class="line"></span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">if [ $1 = start ]</span><br><span class="line"></span><br><span class="line">then</span><br><span class="line"></span><br><span class="line">for i in &#123;1..3&#125;</span><br><span class="line"></span><br><span class="line">do</span><br><span class="line"></span><br><span class="line">echo &quot;$&#123;1&#125;ing node$&#123;i&#125;&quot;</span><br><span class="line"></span><br><span class="line">ssh node$&#123;i&#125; &quot;source /etc/profile;/export/server/zookeeper/bin/zkServer.sh start&quot;</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">if [ $1 = stop ]</span><br><span class="line"></span><br><span class="line">then</span><br><span class="line"></span><br><span class="line">for i in &#123;1..3&#125;</span><br><span class="line"></span><br><span class="line">do</span><br><span class="line"></span><br><span class="line">echo &quot;$&#123;1&#125;ping node$&#123;i&#125;&quot;</span><br><span class="line"></span><br><span class="line">ssh node$&#123;i&#125; &quot;source /etc/profile;/export/server/zookeeper/bin/zkServer.sh stop&quot;</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">if [ $1 = status ]</span><br><span class="line"></span><br><span class="line">then</span><br><span class="line"></span><br><span class="line">for i in &#123;1..3&#125;</span><br><span class="line"></span><br><span class="line">do</span><br><span class="line"></span><br><span class="line">echo &quot;node$&#123;i&#125; status:&quot;</span><br><span class="line"></span><br><span class="line">ssh node$&#123;i&#125; &quot;source /etc/profile;/export/server/zookeeper/bin/zkServer.sh status&quot;</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<h3 id="zkall-sh-start"><a href="#zkall-sh-start" class="headerlink" title="zkall.sh start"></a>zkall.sh start</h3><p><img src="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image047.jpg" class="lazyload" data-srcset="file:///C:/Users/dell/AppData/Local/Packages/oice_16_974fa576_32c1d314_1e42/AC/Temp/msohtmlclip1/01/clip_image047.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-
-</div>
   </div>
   
   
@@ -2833,7 +2652,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/>http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/</a></p>
+                <p>本文永久链接是：<a href=http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/>http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/</a></p>
               
             
           </blockquote>
@@ -2850,10 +2669,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-01T19:40:54+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-22T13:52:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年6月1日</p>
+    <p>更新于：2022年6月22日</p>
   </a>
 </div>
 
@@ -2861,10 +2680,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JAVA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>JAVA</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HADOOP/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>HADOOP</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ZOOKEEPER/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>ZOOKEEPER</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Spark/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Spark</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/anaconda/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>anaconda</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/stand-alone/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>stand-alone</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Spark-HA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Spark HA</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Yarn/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Yarn</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/pyspark/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>pyspark</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Spark-local/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Spark-local</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JDK/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>JDK</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HDFS/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>HDFS</p></a></div>
-  <span hidden itemprop="keywords">JAVA HADOOP ZOOKEEPER Spark anaconda stand-alone Spark HA Yarn pyspark Spark-local JDK HDFS</span>
-
 
         
       
@@ -2876,7 +2691,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/&title=《Spark基础环境配置》 - liusongtao����ҳ&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/&title=《kafka eagle监控系统》 - liusongtao����ҳ&summary="
           
           >
           
@@ -2888,7 +2703,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/&title=《Spark基础环境配置》 - liusongtao����ҳ&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/&title=《kafka eagle监控系统》 - liusongtao����ҳ&summary="
           
           >
           
@@ -2900,7 +2715,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/&title=《Spark基础环境配置》 - liusongtao����ҳ&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/&title=《kafka eagle监控系统》 - liusongtao����ҳ&summary="
           
           >
           
@@ -2933,24 +2748,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/05/28/%E3%80%8ASpark%20local&%20stand-alone%E9%85%8D%E7%BD%AE%E3%80%8B/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>《Spark local& stand-alone配置》</p>
-          <p class='content'>五、安装、配置spark-local1. Anaconda On Linux 安装 (单台服务器)上传安装包: Anaconda3-2021.05-Linux-x86_64.sh(路径：&#x2...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B/'>
-          <p class='title'>《Spark基础环境配置》<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、基础环境1.主机名
-
-
-服务器
-运行角色
-
-
-
-node1.itcast.cn
-NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
+        <a class='next' href='/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/'>
+          <p class='title'>《kafka API使用方法》<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>六、kafka api6.1需要知道的几点
+自动提交是按时间段自动提交offset，其提交的是pool收到的消息的最后一个offset，如果拉取了100条消息还没处理完，此时执行了自动提交后机器...</p>
         </a>
       
     </div>
@@ -2966,7 +2768,7 @@ NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2999,7 +2801,7 @@ NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-text">1.主机名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEhosts%EF%BC%9A%EF%BC%88%E6%B3%A8%EF%BC%9A%E4%B8%89%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AE%EF%BC%89"><span class="toc-text">2.配置hosts：（注：三台服务器同时配置）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vim-x2F-etc-x2F-hosts"><span class="toc-text">vim &#x2F;etc&#x2F;hosts</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%9B%86%E7%BE%A4%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%EF%BC%9A%EF%BC%88%E6%B3%A8%EF%BC%9A%E4%B8%89%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8C%E6%97%B6%E8%BF%9B%E8%A1%8C%EF%BC%89"><span class="toc-text">3.集群时间同步：（注：三台服务器同时进行）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95-node1%E6%89%A7%E8%A1%8C-gt-node1-node2-node3"><span class="toc-text">4. ssh免密登录(node1执行-&gt;node1|node2|node3)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B0%86%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8A%E4%BC%A0%E8%87%B3-x2F-export-x2F-server-%E7%9B%AE%E5%BD%95%E4%B8%8B"><span class="toc-text">1.将安装包上传至 &#x2F;export&#x2F;server 目录下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-text">2.解压安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">3.配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-text">4.验证是否安装成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E8%A7%84%E5%88%92"><span class="toc-text">集群规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%8A%E4%BC%A0hadoop%E5%AE%89%E8%A3%85%E5%8C%85%E8%87%B3-node1-x2F-export-x2F-server-%E5%B9%B6%E8%A7%A3%E5%8E%8B"><span class="toc-text">1.   上传hadoop安装包至 node1 &#x2F;export&#x2F;server 并解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">2.   配置hadoop环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BC%96%E8%BE%91hadoop%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6hadoop-env-sh"><span class="toc-text">3.   编辑hadoop环境配置文件hadoop-env.sh</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E5%86%99%E4%BB%A5%E4%B8%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">#填写以下配置文件：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BC%96%E8%BE%91core-site-xml%EF%BC%88%E6%B3%A8%EF%BC%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84%E4%B8%8B%EF%BC%89"><span class="toc-text">4. 编辑core-site.xml（注：配置文件在当前路径下）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E5%86%99%E4%BB%A5%E4%B8%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A-1"><span class="toc-text">#填写以下配置文件：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91hdfs-site-xml%EF%BC%88%E6%B3%A8%EF%BC%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84%E4%B8%8B%EF%BC%89"><span class="toc-text">编辑hdfs-site.xml（注：配置文件在当前路径下）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91mapred-site-xml%EF%BC%88%E6%B3%A8%EF%BC%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84%E4%B8%8B%EF%BC%89"><span class="toc-text">编辑mapred-site.xml（注：配置文件在当前路径下）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%BC%96%E8%BE%91yarn-site-xml%EF%BC%88%E6%B3%A8%EF%BC%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84%E4%B8%8B%EF%BC%89"><span class="toc-text">7. 编辑yarn-site.xml（注：配置文件在当前路径下）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%BC%96%E8%BE%91workers%EF%BC%88%E6%B3%A8%EF%BC%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84%E4%B8%8B%EF%BC%89"><span class="toc-text">8. 编辑workers（注：配置文件在当前路径下）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%88%86%E5%8F%91%E5%90%8C%E6%AD%A5hadoop%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-text">9. 分发同步hadoop安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Hadoop%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8"><span class="toc-text">10. Hadoop集群启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8"><span class="toc-text">脚本一键启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AEhosts%EF%BC%9A%EF%BC%88%E4%B8%89%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9D%87%E9%9C%80%E4%BF%AE%E6%94%B9%EF%BC%89"><span class="toc-text">1.配置hosts：（三台服务器均需修改）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8A%E4%BC%A0zookeeper%E5%AE%89%E8%A3%85%E5%8C%85%E3%80%81%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-text">2.上传zookeeper安装包、解压安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88node1%E4%B8%8A%E8%BF%9B%E8%A1%8C%EF%BC%89"><span class="toc-text">3.修改配置文件（node1上进行）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%A4%8D%E5%88%B6zoo-cfg-x2F-%E9%85%8D%E7%BD%AEzoo-cfg"><span class="toc-text">（1）复制zoo.cfg &#x2F; 配置zoo.cfg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9"><span class="toc-text">#修改以下内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B7%BB%E5%8A%A0myid%E9%85%8D%E7%BD%AE"><span class="toc-text">4. 添加myid配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%86%E5%8F%91%E5%B9%B6%E4%BF%AE%E6%94%B9myid%E7%9A%84%E5%80%BC"><span class="toc-text">5. 安装包分发并修改myid的值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8node1%E4%B8%BB%E6%9C%BA%E4%B8%8A%EF%BC%8C%E5%B0%86%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%86%E5%8F%91%E5%88%B0%E5%85%B6%E4%BB%96%E6%9C%BA%E5%99%A8"><span class="toc-text">(1) 在node1主机上，将安装包分发到其他机器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E7%AC%AC%E4%BA%8C%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%BB%BA%E7%AB%8B%E8%BD%AF%E8%BF%9E%E6%8E%A5-%E5%B9%B6%E4%BF%AE%E6%94%B9myid%E7%9A%84%E5%80%BC%E4%B8%BA2"><span class="toc-text">（2）第二台机器上建立软连接, 并修改myid的值为2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%AC%AC%E4%B8%89%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%BB%BA%E7%AB%8B%E8%BD%AF%E8%BF%9E%E6%8E%A5-%E5%B9%B6%E4%BF%AE%E6%94%B9myid%E7%9A%84%E5%80%BC%E4%B8%BA3"><span class="toc-text">(3) 第三台机器上建立软连接, 并修改myid的值为3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E3%80%81%E8%84%9A%E6%9C%AC%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8zookeeper"><span class="toc-text">6.配置环境变量、脚本一键启动zookeeper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8-1"><span class="toc-text">脚本一键启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vi-zkall-sh"><span class="toc-text">vi zkall.sh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zkall-sh-start"><span class="toc-text">zkall.sh start</span></a></li></ol></li></ol>
+        
     </div>
   </section>
 
@@ -4016,7 +3818,7 @@ NameNode DataNode  ResourceManager NodeManager QuorumPe...</p>
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/Hadoop/","name":"Hadoop"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/Hadoop/Zookeeper/","name":"Zookeeper"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/Hadoop/Zookeeper/Spark/","name":"Spark"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/28/《Spark基础环境配置》-1/","name":"《Spark基础环境配置》"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"《Spark基础环境配置》","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/28/%E3%80%8ASpark%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8B-1/","wordCount":0,"datePublished":"2022-05-28T09:19:00.000Z","dateModified":"2022-06-01T11:40:54.875Z","articleSection":"Java","keywords":"JAVA,HADOOP,ZOOKEEPER,Spark,anaconda,stand-alone,Spark HA,Yarn,pyspark,Spark-local,JDK,HDFS","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/22/《kafka eagle监控系统》/","name":"《kafka eagle监控系统》"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"《kafka eagle监控系统》","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/","wordCount":0,"datePublished":"2022-06-22T05:51:16.000Z","dateModified":"2022-06-22T05:52:30.709Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.3.2">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/spark-ha/spark-on-yarn/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/06/22/《kafka api使用方法》/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,17 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>分类：Spark On Yarn - liusongtao����ҳ</title>
+  <title>《kafka API使用方法》 - liusongtao����ҳ</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="��ӭ����liusongtao����ҳ - liusongtao - liusongtao����ҳ">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="liusongtao����ҳ">
-<meta property="og:url" content="http://example.com/categories/Spark-HA/Spark-On-Yarn/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《kafka API使用方法》">
+<meta property="og:url" content="http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/index.html">
 <meta property="og:site_name" content="liusongtao����ҳ">
-<meta property="og:description" content="��ӭ����liusongtao����ҳ">
+<meta property="og:description" content="六、kafka api6.1需要知道的几点 自动提交是按时间段自动提交offset，其提交的是pool收到的消息的最后一个offset，如果拉取了100条消息还没处理完，此时执行了自动提交后机器宕机，则会丢失数据；自动提交默认是开启的，可以使用如下代码禁用：props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, “false”); rebalance">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-06-22T05:46:53.000Z">
+<meta property="article:modified_time" content="2022-06-22T05:49:03.248Z">
 <meta property="article:author" content="liusongtao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2443,7 +2445,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
 
@@ -2517,25 +2519,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/%E3%80%8ASpark-HA-Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="liusongtao����ҳ">
   </span>
@@ -2544,75 +2530,408 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="��ӭ����liusongtao����ҳ">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/28/%E3%80%8ASpark-HA-Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/"  itemprop="url">
-        《Spark HA & Yarn配置》
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        七、spark standalone HA环境搭建（需要更新zookeeper版本，略）前提: 确保Zookeeper 和 HDFS 均已经启动
-先在spark-env.sh中, 删除: SPARK_MASTER_HOST=node1
+    
+      <h1 class="title" itemprop="name headline">
+        《kafka API使用方法》
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
 
-原因: 配置文件中固定master是谁, 那么就无法用到zk的动态切换master功能了.
-在spark-env.sh中, 增加:
-1234567SPARK...
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-22T13:46:53+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年6月22日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>六、kafka api<br>6.1需要知道的几点</p>
+<p>自动提交是按时间段自动提交offset，其提交的是pool收到的消息的最后一个offset，如果拉取了100条消息还没处理完，此时执行了自动提交后机器宕机，则会丢失数据；自动提交默认是开启的，可以使用如下代码禁用：props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, “false”);</p>
+<p>rebalance后消费者会从分区已提交的offset位点继续消费</p>
+<p>auto.offset.reset：</p>
+<ul>
+<li>earliest：当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费；</li>
+<li>latest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据</li>
+<li>none:topic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的offset，则抛出异常</li>
+</ul>
+<p>实际应用中，消费到的数据处理时长不宜超过max.poll.interval.ms，否则会触发rebalance<br>如果处理消费到的数据耗时，可以尝试通过减小max.poll.records的方式减小单次拉取的记录数（默认是500条）<br>业务如果想不丢数据且不重复消费，需要自己记录offset自己手动提交offset，并做消息重复过滤<br>使用kafka需引入依赖</p>
+<dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>kafka-clients</artifactId>
+    <version>2.0.1</version>
+</dependency>
+
+<p>6.2 生产者代码</p>
+<p>public class MyKafkaProducer {</p>
+<pre><code>public static void main(String[] args) throws Exception, InterruptedException &#123;
+    Properties props = new Properties();
+    props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;127.0.0.1:9092&quot;);
+    props.put(ProducerConfig.ACKS_CONFIG, &quot;all&quot;);// leader 确认机制 0 1 all
+    props.put(ProducerConfig.RETRIES_CONFIG, 1);// 重试次数
+    props.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);// 生产者批发送大小
+    props.put(ProducerConfig.LINGER_MS_CONFIG, 1);// 生产者达不到批发送大小，最短等待时间
+    props.put(ProducerConfig.BUFFER_MEMORY_CONFIG, 33554432);// RecordAccumulator 缓冲区大小
+    props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, &quot;org.apache.kafka.common.serialization.StringSerializer&quot;);// key的序列化器
+    props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, &quot;org.apache.kafka.common.serialization.StringSerializer&quot;);// value的序列化器
+
+    Producer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(props);
+
+    try &#123;
+        for (int i = 0; i &lt; 100; i++) &#123;
+            //指定了key会按keyHash对分区数取余决定发到哪个分区，没有指定key会自动生成一个自增id
+            ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(&quot;testoffset&quot;, Integer.toString(i), Integer.toString(i));
+            //默认都是异步发送，如果想同步发送producer.send(xxx).get()单条发送
+            producer.send(record, new Callback() &#123;
+                @Override
+                public void onCompletion(RecordMetadata recordMetadata, Exception exception) &#123;
+                    if (exception != null) &#123;
+                        //当存在异常的时候,失败逻辑
+                        System.out.println(&quot;发送异常&quot;);
+                    &#125; else &#123;
+                        //发送成功之后这里的RecordMetadata内包含此条消息写入到JDQ集群的分区和对应的位点信息等
+                        System.out.println(&quot;success&quot;);
+                    &#125;
+                &#125;
+            &#125;);
+        &#125;
+        /**
+         *  flush :  执行flush代表内存中的消息数据都会send到服务端，可根据callback来判断成功与否
+         *  自己控制flush
+         *  注意：这里可发送一批数据之后再掉flush，达到批量的效果
+         */
+        producer.flush();
+    &#125; finally &#123;
+        producer.close(); //关闭消费者
+    &#125;
+&#125;
+</code></pre>
+<p>}</p>
+<p>6.3 消费者代码</p>
+<p>public class MyKafkaConsumer {</p>
+<pre><code>/**
+ * 参考方法:
+ * &lt;p&gt;
+ * consumer.partitionsFor(topic)
+ * 查询topic的分区信息,当本地没有这个topic的元数据信息的时候会往服务端发送的远程请求
+ * 注意: 没有权限的topic的时候会抛出异常(org.apache.kafka.common.errors.TopicAuthorizationException)
+ * consumer.assignment()
+ *      查询指定方式或订阅方式分配到当前消费者的分区信息，还未订阅或重新分配时为空
+ * &lt;p&gt;
+ * consumer.position(new TopicPartition(topic, 0))
+ * 获取下次拉取的数据的offset, 如果没有offset记录则会抛出异常
+ * &lt;p&gt;
+ * consumer.committed(new TopicPartition(topic, 0))
+ * 获取已提交的位点信息，如果没有查询到则返回null
+ * &lt;p&gt;
+ * consumer.beginningOffsets(Arrays.asList(new TopicPartition(topic, 0)));
+ * consumer.endOffsets(Arrays.asList(new TopicPartition(topic, 0)));
+ * consumer.offsetsForTimes(timestampsToSearch);
+ * 查询最小,最大,或者任意时间的位点信息
+ * &lt;p&gt;
+ * consumer.seek(new TopicPartition(topic, 0), 10972);
+ * consumer.seekToBeginning(Arrays.asList(new TopicPartition(topic, 0)));
+ * consumer.seekToEnd(Arrays.asList(new TopicPartition(topic, 0)));
+ * 指定offset消费,seek调用需要写到ConsumerRebalanceListener中否则会报错No current assignment for partition
+ * 或者可以使用assign手动分配分区就可以直接使用seek方法，但是assign不会进行rebalance
+ * &lt;p&gt;
+ * consumer.assign(Arrays.asList(new TopicPartition(topic, 0)));
+ * 手动分配消费的topic和分区进行消费，这里不会出发group management操作,指定分区消费数据
+ * 和subscribe方法互斥,如果assign 之后或者之后调用subscribe 则会报错，不允许再进行分配，2方法不能一起使用
+ * &lt;p&gt;
+ * consumer.subscribe(topics);
+ * 自动发布消费的topic进行消费,这里触发group management操作
+ * 和assign方法互斥,如果subscribe 之后或者之后调用assign 则会报错，不允许再进行分配，2方法不能一起使用
+ * &lt;p&gt;
+ * 注: group management
+ * 根据group 进行topic分区内部的消费rebanlance
+ * 例如消费的topic包含3个分区，启动了4个相同鉴权的客户端消费
+ * 分区0 -- consumer1   分区1 -- consumer2   分区2 --- consumer3    consumer4则会空跑不消费数据
+ * 当分区consumer1挂掉的时候则会出现rebalance，之后变为
+ * 分区0 -- consumer2   分区1 -- consumer3   分区2 --- consumer4
+ */
+private static AtomicBoolean running = new AtomicBoolean(true);
+public static void main(String[] args) throws Exception &#123;
+    Properties props = new Properties();
+    props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;127.0.0.1:9092&quot;);//
+    props.put(ConsumerConfig.GROUP_ID_CONFIG, &quot;miner&quot;); //消费者组
+    props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, &quot;10000&quot;);
+    props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, &quot;false&quot;); //自动提交
+    props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, &quot;1&quot;); //每次最多拉取1条
+
+    //（1）实际应用中，消费到的数据处理时长不宜超过max.poll.interval.ms，否则会触发rebalance
+    //（2）如果处理消费到的数据耗时，可以尝试通过减小max.poll.records的方式减小单次拉取的记录数（默认是500条）
+    //指定consumer两次poll的最大时间间隔（默认5分钟），如果超过了该间隔consumer client会主动向coordinator发起LeaveGroup请求，触发rebalance；然后consumer重新发送JoinGroup请求
+    props.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, &quot;10000&quot;); //两次pool最大时间间隔
+    //props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, &quot;1000&quot;); //自动提交最短时间
+    //key反序列化类
+    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);
+    //value反序列化类
+    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);
+    KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;&gt;(props);
+
+    Collection&lt;String&gt; topics = Arrays.asList(&quot;testoffset&quot;);
+    consumer.subscribe(topics, new ConsumerRebalanceListener() &#123;
+        @Override
+        public void onPartitionsRevoked(Collection&lt;TopicPartition&gt; collection) &#123;
+            System.out.println(&quot;====rebalance前&quot;);
+        &#125;
+
+        @Override
+        public void onPartitionsAssigned(Collection&lt;TopicPartition&gt; collection) &#123;
+            System.out.println(&quot;====rebalance后&quot;);
+            for (TopicPartition topicPartition:collection) &#123;
+                //指定offset拉取
+                consumer.seekToBeginning(Collections.singletonList(new TopicPartition(&quot;testoffset&quot;, 0)));
+            &#125;
+        &#125;
+    &#125;);
+    //手动指定分区方式订阅
+    /*List&lt;TopicPartition&gt; list = Collections.singletonList(new TopicPartition(&quot;testoffset&quot;, 0));
+    consumer.assign(list);
+    List&lt;PartitionInfo&gt; partitionInfos = consumer.partitionsFor(&quot;testoffset&quot;);
+    for (PartitionInfo partitionInfo:partitionInfos) &#123;
+        int partitionNumber = partitionInfo.partition();
+        OffsetAndMetadata offsetAndMetadata = consumer.committed(new TopicPartition(&quot;testoffset&quot;, partitionNumber));
+        long offset = offsetAndMetadata.offset();
+        TopicPartition topicPartition = new TopicPartition(&quot;testoffset&quot;, partitionNumber);
+        consumer.seek(topicPartition, 0);
+    &#125;*/
+    //查看已提交的offset
+</code></pre>
+<p>&#x2F;*        OffsetAndMetadata testoffset &#x3D; consumer.committed(new TopicPartition(“testoffset”, 0));<br>        System.out.println(“&#x3D;&#x3D;&#x3D;1:” + testoffset.metadata());<br>        System.out.println(“&#x3D;&#x3D;&#x3D;2:” + testoffset.offset());*&#x2F;</p>
+<pre><code>    while (true) &#123;
+        //没有分到分区的消费者record size=0
+        ConsumerRecords&lt;String, String&gt; records = consumer.poll(Duration.ofSeconds(3)); //拉取数据
+        if (records != null &amp;&amp; !records.isEmpty()) &#123;
+            for (ConsumerRecord&lt;String, String&gt; record : records) &#123;
+                System.out.printf(&quot;====:partition = %s,offset = %d, key = %s, value= %s%n&quot;, record.partition(), record.offset(), record.key(), record.value());
+            &#125;
+        &#125;
+        Thread.sleep(1000);
+        if(!running.get())&#123;
+            break;
+        &#125;
+    &#125;
+    //异步提交
+    consumer.commitAsync(new OffsetCommitCallback() &#123;
+        @Override
+        public void onComplete(Map&lt;TopicPartition, OffsetAndMetadata&gt; map, Exception e) &#123;
+
+        &#125;
+    &#125;);
+
+    consumer.close();
+&#125;
+</code></pre>
+<p>}</p>
+
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-28T18:30:00+08:00">2022-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spark-HA/">Spark HA</a><span class="sep"></span><a class="category-link" href="/categories/Spark-HA/Spark-On-Yarn/">Spark On Yarn</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spark-HA/" itemprop="url"><span itemprop="name">Spark HA</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spark-HA/Spark-On-Yarn/" itemprop="url"><span itemprop="name">Spark On Yarn</span></a>
-            </span>
-          
-        
-      </div>
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2022/05/28/%E3%80%8ASpark-HA-Yarn%E9%85%8D%E7%BD%AE%E3%80%8B/' itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/>http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-22T13:49:03+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年6月22日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/&title=《kafka API使用方法》 - liusongtao����ҳ&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/&title=《kafka API使用方法》 - liusongtao����ҳ&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/&title=《kafka API使用方法》 - liusongtao����ҳ&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
-    
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/06/22/%E3%80%8Akafka%20eagle%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E3%80%8B/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>《kafka eagle监控系统》</p>
+          <p class='content'>简介kafka eagle（kafka鹰） 是一款由国内公司开源的Kafka集群监控系统，可以用来监视kafka集群的broker状态、Topic信息、IO、内存、consumer线程、偏移量等...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/06/22/%E3%80%8AKafka%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E3%80%8B/'>
+          <p class='title'>《Kafka命令行操作》<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>二：kafka的基本操作（命令行操作）1.查看当前服务器中的所有topic（在kafka目录下）
+kafka-topics.sh –zookeeper hadoop001:2181 –list2...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-  
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2620,176 +2939,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow floatable blur desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='C:\Users\dell\OneDrive\桌面\1.jpg'>
-          <img no-lazy src='https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">liusongtao����ҳ</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
+
+
+  <div class="pjax">
+    <!-- pjax占位 -->
   </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow floatable blur desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Java/Hadoop/" href="/categories/Java/Hadoop/"
-            active-action="action-categoriesJavaHadoop"
-            ><div class='name'>Hadoop</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Java/Hadoop/Zookeeper/" href="/categories/Java/Hadoop/Zookeeper/"
-            active-action="action-categoriesJavaHadoopZookeeper"
-            ><div class='name'>Zookeeper</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Java/Hadoop/Zookeeper/Spark/" href="/categories/Java/Hadoop/Zookeeper/Spark/"
-            active-action="action-categoriesJavaHadoopZookeeperSpark"
-            ><div class='name'>Spark</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spark-HA/" href="/categories/Spark-HA/"
-            active-action="action-categoriesSpark-HA"
-            ><div class='name'>Spark HA</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Spark-HA/Spark-On-Yarn/" href="/categories/Spark-HA/Spark-On-Yarn/"
-            active-action="action-categoriesSpark-HASpark-On-Yarn"
-            ><div class='name'>Spark On Yarn</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spark-local/" href="/categories/Spark-local/"
-            active-action="action-categoriesSpark-local"
-            ><div class='name'>Spark-local</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Spark-local/Anaconda/" href="/categories/Spark-local/Anaconda/"
-            active-action="action-categoriesSpark-localAnaconda"
-            ><div class='name'>Anaconda</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Spark-local/Anaconda/pyspark/" href="/categories/Spark-local/Anaconda/pyspark/"
-            active-action="action-categoriesSpark-localAnacondapyspark"
-            ><div class='name'>pyspark</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Spark-local/Anaconda/pyspark/Master/" href="/categories/Spark-local/Anaconda/pyspark/Master/"
-            active-action="action-categoriesSpark-localAnacondapysparkMaster"
-            ><div class='name'>Master</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Spark-local/Anaconda/pyspark/Master/Worker/" href="/categories/Spark-local/Anaconda/pyspark/Master/Worker/"
-            active-action="action-categoriesSpark-localAnacondapysparkMasterWorker"
-            ><div class='name'>Worker</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow floatable blur desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/HADOOP/" style="font-size: 14px; color: #999">HADOOP</a> <a href="/tags/HDFS/" style="font-size: 14px; color: #999">HDFS</a> <a href="/tags/JAVA/" style="font-size: 14px; color: #999">JAVA</a> <a href="/tags/JDK/" style="font-size: 14px; color: #999">JDK</a> <a href="/tags/Spark/" style="font-size: 14px; color: #999">Spark</a> <a href="/tags/Spark-HA/" style="font-size: 14px; color: #999">Spark HA</a> <a href="/tags/Spark-local/" style="font-size: 14px; color: #999">Spark-local</a> <a href="/tags/Yarn/" style="font-size: 14px; color: #999">Yarn</a> <a href="/tags/ZOOKEEPER/" style="font-size: 14px; color: #999">ZOOKEEPER</a> <a href="/tags/anaconda/" style="font-size: 14px; color: #999">anaconda</a> <a href="/tags/pyspark/" style="font-size: 14px; color: #999">pyspark</a> <a href="/tags/stand-alone/" style="font-size: 14px; color: #999">stand-alone</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2818,13 +2985,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3790,7 +3958,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Spark On Yarn/","name":"Spark On Yarn"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"��ӭ����liusongtao����ҳ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"liusongtao����ҳ"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/22/《kafka API使用方法》/","name":"《kafka API使用方法》"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"liusongtao����ҳ","url":"http://example.com/","keywords":null,"description":"��ӭ����liusongtao����ҳ","author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"��ӭ����liusongtao����ҳ"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"《kafka API使用方法》","description":"��ӭ����liusongtao����ҳ","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/"},"author":{"@type":"Person","name":"liusongtao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"liusongtao����ҳ","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/22/%E3%80%8Akafka%20API%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%8B/","wordCount":0,"datePublished":"2022-06-22T05:46:53.000Z","dateModified":"2022-06-22T05:49:03.248Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
